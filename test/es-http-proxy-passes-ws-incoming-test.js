@@ -1,7 +1,7 @@
-import httpProxy from '../lib/http-proxy/passes/ws-incoming'
-import { assert } from 'chai'
+import * as httpProxy from '../lib/es-http-proxy/passes/ws-incoming'
+import { expect } from 'chai'
 
-describe('lib/http-proxy/passes/ws-incoming.js', function () {
+describe('lib/es-http-proxy/passes/ws-incoming.js', function () {
   describe('#checkMethodAndHeader', function () {
     it('should drop non-GET connections', function () {
       var destroyCalled = false
@@ -10,9 +10,9 @@ describe('lib/http-proxy/passes/ws-incoming.js', function () {
           // Simulate Socket.destroy() method when call
           destroyCalled = true
         } }
-      returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket)
-      expect(returnValue).to.be(true)
-      expect(destroyCalled).to.be(true)
+      const returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket)
+      expect(returnValue).to.eql(true)
+      expect(destroyCalled).to.eql(true)
     })
 
     it('should drop connections when no upgrade header', function () {
@@ -23,9 +23,9 @@ describe('lib/http-proxy/passes/ws-incoming.js', function () {
           // Simulate Socket.destroy() method when call
           destroyCalled = true
         } }
-      returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket)
-      expect(returnValue).to.be(true)
-      expect(destroyCalled).to.be(true)
+      const returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket)
+      expect(returnValue).to.eql(true)
+      expect(destroyCalled).to.eql(true)
     })
 
     it('should drop connections when upgrade header is different of `websocket`', function () {
@@ -36,9 +36,9 @@ describe('lib/http-proxy/passes/ws-incoming.js', function () {
           // Simulate Socket.destroy() method when call
           destroyCalled = true
         } }
-      returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket)
-      expect(returnValue).to.be(true)
-      expect(destroyCalled).to.be(true)
+      const returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket)
+      expect(returnValue).to.eql(true)
+      expect(destroyCalled).to.eql(true)
     })
 
     it('should return nothing when all is ok', function () {
@@ -49,16 +49,16 @@ describe('lib/http-proxy/passes/ws-incoming.js', function () {
           // Simulate Socket.destroy() method when call
           destroyCalled = true
         } }
-      returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket)
-      expect(returnValue).to.be(undefined)
-      expect(destroyCalled).to.be(false)
+      const returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket)
+      expect(returnValue).to.eql(undefined)
+      expect(destroyCalled).to.eql(false)
     })
   })
 
   describe('#XHeaders', function () {
     it('return if no forward request', function () {
       var returnValue = httpProxy.XHeaders({}, {}, {})
-      expect(returnValue).to.be(undefined)
+      expect(returnValue).to.be.undefined
     })
 
     it('set the correct x-forwarded-* headers from req.connection', function () {
@@ -66,9 +66,9 @@ describe('lib/http-proxy/passes/ws-incoming.js', function () {
           remotePort: '8080' },
         headers: { host: '192.168.1.2:8080' } }
       httpProxy.XHeaders(stubRequest, {}, { xfwd: true })
-      expect(stubRequest.headers['x-forwarded-for']).to.be('192.168.1.2')
-      expect(stubRequest.headers['x-forwarded-port']).to.be('8080')
-      expect(stubRequest.headers['x-forwarded-proto']).to.be('ws')
+      expect(stubRequest.headers['x-forwarded-for']).to.eql('192.168.1.2')
+      expect(stubRequest.headers['x-forwarded-port']).to.eql('8080')
+      expect(stubRequest.headers['x-forwarded-proto']).to.eql('ws')
     })
 
     it('set the correct x-forwarded-* headers from req.socket', function () {
@@ -77,9 +77,9 @@ describe('lib/http-proxy/passes/ws-incoming.js', function () {
         connection: { pair: true },
         headers: { host: '192.168.1.3:8181' } }
       httpProxy.XHeaders(stubRequest, {}, { xfwd: true })
-      expect(stubRequest.headers['x-forwarded-for']).to.be('192.168.1.3')
-      expect(stubRequest.headers['x-forwarded-port']).to.be('8181')
-      expect(stubRequest.headers['x-forwarded-proto']).to.be('wss')
+      expect(stubRequest.headers['x-forwarded-for']).to.eql('192.168.1.3')
+      expect(stubRequest.headers['x-forwarded-port']).to.eql('8181')
+      expect(stubRequest.headers['x-forwarded-proto']).to.eql('wss')
     })
   })
 })

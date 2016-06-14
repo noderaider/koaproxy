@@ -1,4 +1,5 @@
 /**
+ * repackage - https://github.com/noderaider/repackage
  * This script gets compiled by repackage and replaces the scripts node in the
  * package.json. Use linux style setting of environment variables, if on
  * Windows, the scripts will have the commands swapped for Windows versions.
@@ -7,7 +8,7 @@
  const GH_PAGES_ROOT = 'doc'
 
                           /** START SCRIPT STARTS BUILD WITH WATCHING ENABLED (USEFUL WITH NPM LINK) */
-export default ({}) => ({ 'start': 'run-p build-watch test-watch'
+export default ({}) => ({ 'start': 'run-p -lnc build-watch test-watch'
 
                           /** CLEAN EVERYTHING PRE BUILD */
                         , 'clean': 'run-p clean-lib clean-doc clean-test'

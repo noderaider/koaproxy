@@ -1,4 +1,4 @@
-import httpProxy from '../lib/http-proxy'
+import ProxyServer, { createProxyServer } from '../lib/es-http-proxy'
 import semver from 'semver'
 import { expect } from 'chai'
 import http from 'http'
@@ -10,28 +10,27 @@ import fs from 'fs'
 // Expose a port number generator.
 // thanks to @3rd-Eden
 //
-var initialPort = 1024, gen = {}
-Object.defineProperty(gen, 'port', {
-  get: function get() {
-    return initialPort++
-  }
-})
+let initialPort = 11024
+let gen = { get port() {
+              return initialPort++
+            }
+          }
 
-describe('lib/http-proxy.js', function() {
+describe('lib/es-http-proxy.js', function() {
   describe('HTTPS #createProxyServer', function() {
     describe('HTTPS to HTTP', function () {
       it('should proxy the request en send back the response', function (done) {
         var ports = { source: gen.port, proxy: gen.port }
         var source = http.createServer(function(req, res) {
           expect(req.method).to.eql('GET')
-          expect(req.headers.host.split(':')[1]).to.eql(ports.proxy)
+          expect(req.headers.host.split(':')[1]).to.eql(ports.proxy.toString())
           res.writeHead(200, { 'Content-Type': 'text/plain' })
           res.end('Hello from ' + ports.source)
         })
 
         source.listen(ports.source)
 
-        var proxy = httpProxy.createProxyServer({
+        var proxy = createProxyServer({
           target: 'http://127.0.0.1:' + ports.source,
           ssl: {
             key: fs.readFileSync(path.join(__dirname, 'fixtures', 'agent2-key.pem')),
@@ -62,7 +61,7 @@ describe('lib/http-proxy.js', function() {
       })
     })
     describe('HTTP to HTTPS', function () {
-      it('should proxy the request en send back the response', function (done) {
+      it('should proxy the request and send back the response', function (done) {
         var ports = { source: gen.port, proxy: gen.port }
         var source = https.createServer({
           key: fs.readFileSync(path.join(__dirname, 'fixtures', 'agent2-key.pem')),
@@ -70,14 +69,14 @@ describe('lib/http-proxy.js', function() {
           ciphers: 'AES128-GCM-SHA256'
         }, function (req, res) {
           expect(req.method).to.eql('GET')
-          expect(req.headers.host.split(':')[1]).to.eql(ports.proxy)
+          expect(req.headers.host.split(':')[1]).to.eql(ports.proxy.toString())
           res.writeHead(200, { 'Content-Type': 'text/plain' })
           res.end('Hello from ' + ports.source)
         })
 
         source.listen(ports.source)
 
-        var proxy = httpProxy.createProxyServer({
+        var proxy = createProxyServer({
           target: 'https://127.0.0.1:' + ports.source,
           // Allow to use SSL self signed
           secure: false
@@ -111,14 +110,14 @@ describe('lib/http-proxy.js', function() {
           ciphers: 'AES128-GCM-SHA256'
         }, function(req, res) {
           expect(req.method).to.eql('GET')
-          expect(req.headers.host.split(':')[1]).to.eql(ports.proxy)
+          expect(req.headers.host.split(':')[1]).to.eql(ports.proxy.toString())
           res.writeHead(200, { 'Content-Type': 'text/plain' })
           res.end('Hello from ' + ports.source)
         })
 
         source.listen(ports.source)
 
-        var proxy = httpProxy.createProxyServer({
+        var proxy = createProxyServer({
           target: 'https://127.0.0.1:' + ports.source,
           ssl: {
             key: fs.readFileSync(path.join(__dirname, 'fixtures', 'agent2-key.pem')),
@@ -158,7 +157,7 @@ describe('lib/http-proxy.js', function() {
           ciphers: 'AES128-GCM-SHA256'
         }).listen(ports.source)
 
-        var proxy = httpProxy.createProxyServer({
+        var proxy = createProxyServer({
           target: 'https://127.0.0.1:' + ports.source,
           secure: true
         })
@@ -166,11 +165,11 @@ describe('lib/http-proxy.js', function() {
         proxy.listen(ports.proxy)
 
         proxy.on('error', function (err, req, res) {
-          expect(err).to.be.an(Error)
+          expect(err).to.be.an.instanceof(Error)
           if (semver.gt(process.versions.node, '0.12.0')) {
-            expect(err.toString()).to.be('Error: self signed certificate')
+            expect(err.toString()).to.eql('Error: self signed certificate')
           } else {
-            expect(err.toString()).to.be('Error: DEPTH_ZERO_SELF_SIGNED_CERT')
+            expect(err.toString()).to.eql('Error: DEPTH_ZERO_SELF_SIGNED_CERT')
           }
           done()
         })
@@ -187,14 +186,14 @@ describe('lib/http-proxy.js', function() {
         var ports = { source: gen.port, proxy: gen.port }
         var source = http.createServer(function(req, res) {
           expect(req.method).to.eql('GET')
-          expect(req.headers.host.split(':')[1]).to.eql(ports.proxy)
+          expect(req.headers.host.split(':')[1]).to.eql(ports.proxy.toString())
           res.writeHead(200, { 'Content-Type': 'text/plain' })
           res.end('Hello from ' + ports.source)
         })
 
         source.listen(ports.source)
 
-        var proxy = httpProxy.createServer({
+        var proxy = createProxyServer({
           agent: new http.Agent({ maxSockets: 2 })
         })
 

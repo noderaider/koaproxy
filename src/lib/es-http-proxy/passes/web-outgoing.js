@@ -1,9 +1,6 @@
-'use strict';
+import url from 'url'
 
-var url = require('url'),
-    passes = exports;
-
-var redirectRegex = /^30(1|2|7|8)$/;
+const redirectRegex = /^30(1|2|7|8)$/
 
 /*!
  * Array of passes.
@@ -12,8 +9,6 @@ var redirectRegex = /^30(1|2|7|8)$/;
  * so that you can easily add new checks while still keeping the base
  * flexible.
  */
-
-[// <--
 
 /**
  * If is a HTTP 1.0 request, remove chunk headers
@@ -24,11 +19,10 @@ var redirectRegex = /^30(1|2|7|8)$/;
  *
  * @api private
  */
-function removeChunked(req, res, proxyRes) {
-  if (req.httpVersion === '1.0') {
-    delete proxyRes.headers['transfer-encoding'];
-  }
-},
+export function removeChunked(req, res, proxyRes) {
+  if (req.httpVersion === '1.0')
+    delete proxyRes.headers['transfer-encoding']
+}
 
 /**
  * If is a HTTP 1.0 request, set the correct connection header
@@ -40,34 +34,38 @@ function removeChunked(req, res, proxyRes) {
  *
  * @api private
  */
-function setConnection(req, res, proxyRes) {
+export function setConnection(req, res, proxyRes) {
   if (req.httpVersion === '1.0') {
-    proxyRes.headers.connection = req.headers.connection || 'close';
+    proxyRes.headers.connection = req.headers.connection || 'close'
   } else if (!proxyRes.headers.connection) {
-    proxyRes.headers.connection = req.headers.connection || 'keep-alive';
+    proxyRes.headers.connection = req.headers.connection || 'keep-alive'
   }
-}, function setRedirectHostRewrite(req, res, proxyRes, options) {
-  if ((options.hostRewrite || options.autoRewrite || options.protocolRewrite) && proxyRes.headers['location'] && redirectRegex.test(proxyRes.statusCode)) {
-    var target = url.parse(options.target);
-    var u = url.parse(proxyRes.headers['location']);
+}
+
+export function setRedirectHostRewrite(req, res, proxyRes, options) {
+  if ((options.hostRewrite || options.autoRewrite || options.protocolRewrite)
+      && proxyRes.headers['location']
+      && redirectRegex.test(proxyRes.statusCode)) {
+    var target = url.parse(options.target)
+    var u = url.parse(proxyRes.headers['location'])
 
     // make sure the redirected host matches the target host before rewriting
     if (target.host != u.host) {
-      return;
+      return
     }
 
     if (options.hostRewrite) {
-      u.host = options.hostRewrite;
+      u.host = options.hostRewrite
     } else if (options.autoRewrite) {
-      u.host = req.headers['host'];
+      u.host = req.headers['host']
     }
     if (options.protocolRewrite) {
-      u.protocol = options.protocolRewrite;
+      u.protocol = options.protocolRewrite
     }
 
-    proxyRes.headers['location'] = u.format();
+    proxyRes.headers['location'] = u.format()
   }
-},
+}
 /**
  * Copy headers from proxyResponse to response
  * set each header in response object.
@@ -78,13 +76,15 @@ function setConnection(req, res, proxyRes) {
  *
  * @api private
  */
-function writeHeaders(req, res, proxyRes) {
-  Object.keys(proxyRes.headers).forEach(function (key) {
-    if (proxyRes.headers[key] != undefined) {
-      res.setHeader(String(key).trim(), proxyRes.headers[key]);
+export function writeHeaders(req, res, proxyRes) {
+  for(let key of Object.keys(proxyRes.headers)) {
+    if(typeof proxyRes.headers[key] !== 'undefined') {
+      if(res.headersSent)
+        throw new Error(`Cannot write header ${key} because headers have already been sent.`)
+      res.setHeader(String(key).trim(), proxyRes.headers[key])
     }
-  });
-},
+  }
+}
 
 /**
  * Set the statusCode from the proxyResponse
@@ -95,9 +95,7 @@ function writeHeaders(req, res, proxyRes) {
  *
  * @api private
  */
-function writeStatusCode(req, res, proxyRes) {
-  res.writeHead(proxyRes.statusCode);
-}] // <--
-.forEach(function (func) {
-  passes[func.name] = func;
-});
+export const writeStatusCode = (req, res, proxyRes) => res.writeHead(proxyRes.statusCode)
+
+
+export default [ removeChunked, setConnection, setRedirectHostRewrite, writeHeaders, writeStatusCode ]

@@ -1,7 +1,7 @@
-import httpProxy from '../lib/http-proxy/passes/web-outgoing'
+import * as httpProxy from '../lib/es-http-proxy/passes/web-outgoing'
 import { expect } from 'chai'
 
-describe('lib/http-proxy/passes/web-outgoing.js', function () {
+describe('lib/es-http-proxy/passes/web-outgoing.js', function () {
   describe('#setRedirectHostRewrite', function () {
     beforeEach(function() {
       this.req = { headers: { host: 'ext-auto.com' } }
