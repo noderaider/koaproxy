@@ -1,8 +1,7 @@
 [![NPM](https://raw.githubusercontent.com/noderaider/koaproxy/master/public/images/koaproxy.gif)](https://npmjs.com/packages/koaproxy)
 
-## koaproxy
 
-**koa proxy for the masses, reimplementation of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) from the ground up for koa 2.**
+**proxy for the masses, reimplementation of [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) from the ground up for koa 2.**
 
 
 [![Build Status](https://travis-ci.org/noderaider/koaproxy.svg?branch=master)](https://travis-ci.org/noderaider/koaproxy)
