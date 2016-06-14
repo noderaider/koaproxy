@@ -1,4 +1,4 @@
-[![NPM](https://raw.githubusercontent.com/noderaider/koaproxy/master/public/images/logo.gif)](https://npmjs.com/packages/koaproxy)
+[![NPM](https://raw.githubusercontent.com/noderaider/koaproxy/master/public/images/koaproxy.gif)](https://npmjs.com/packages/koaproxy)
 
 ## koaproxy
 
