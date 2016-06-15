@@ -1810,8 +1810,3 @@ _https2.default.request({
 ## Before testing examples
 <a name="es-http-proxy-examples-requiring-all-the-examples"></a>
 ## Requiring all the examples
-
-## COVERAGE
-
-**Code coverage output for current release:**
-```
