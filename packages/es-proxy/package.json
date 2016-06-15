@@ -1,12 +1,12 @@
 {
   "name": "es-proxy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ES modules reimplementation of node-http-proxy from the ground up.",
   "main": "lib/index.js",
   "dependencies": {
     "chai": "^3.0.0",
     "eventemitter3": "^1.0.0",
-    "koaproxy-core": "latest",
+    "koaproxy-core": "0.1.1",
     "requires-port": "^1.0.0"
   },
   "devDependencies": {
