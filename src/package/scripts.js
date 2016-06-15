@@ -24,6 +24,7 @@ export default ({}) => ({ 'start': 'run-p -lnc build-watch test-watch'
                           /** TEST */
                         , 'pretest-mocha': 'npm run build'
                         , 'test-mocha': 'mocha --harmony --es_staging --require test/require'
+                        , 'test-mocha-md': 'mocha --harmony --es_staging --require test/require --reporter markdown | tee TEST.md'
                         , 'test': 'nyc npm run test-mocha'
                         , 'coverage': 'nyc report --reporter=text-lcov > coverage.lcov && codecov'
                         , 'test-watch': 'npm run test-mocha -- --watch'
