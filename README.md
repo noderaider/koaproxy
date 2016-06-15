@@ -23,12 +23,12 @@ implementing components such as reverse proxies and load balancers.
 
 **This library is currently in a state of rewrite. Some of the documentation has not yet been rewritten. Stay tuned.**
 
-* Restructure
-  * Babel
-  * ES Modules
-* Rewrite code
+* Restructure node-http-proxy as es-http-proxy
+  * Babel - Done
+  * ES Modules - Done
+* Rewrite tests - Done (All passing)
+* Write koaproxy
   * async / await friendly promise based
-* Rewrite tests
 * Rewrite docs
 
 
