@@ -3,6 +3,7 @@ language: node_js
 node_js:
   - "node"
   - "5"
+after_success: npm run coverage
 notifications:
   email:
     - cole.chamberlain@gmail.com
