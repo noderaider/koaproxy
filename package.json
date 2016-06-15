@@ -1,6 +1,6 @@
 {
   "name": "koaproxy",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "koa proxy for the masses, reimplementation of node-http-proxy from the ground up for koa 2.",
   "main": "lib/index.js",
   "files": [
