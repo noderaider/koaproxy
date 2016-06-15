@@ -1,0 +1,25 @@
+{
+  "name": "koaproxy-ws",
+  "version": "0.1.1",
+  "description": "Web socket utils for koaproxy.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noderaider/koaproxy.git"
+  },
+  "keywords": [
+    "koaproxy",
+    "koa",
+    "http-proxy",
+    "proxy"
+  ],
+  "author": "chambersoft <cole.chamberlain@gmail.com> (http://chambersoft.github.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noderaider/koaproxy/issues"
+  },
+  "homepage": "https://github.com/noderaider/koaproxy#readme"
+}
