@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">lib/es-http-proxy/ProxyServer.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/noderaider/koaproxy.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">es-http-proxy</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/es-http-proxy/ProxyServer.js~ProxyServer.html">ProxyServer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createRightProxy">createRightProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPort">getPort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hasEncryptedConnection">hasEncryptedConnection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setupOutgoing">setupOutgoing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setupSocket">setupSocket</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-urlJoin">urlJoin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createProxyServer">createProxyServer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-isSSL">isSSL</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">es-http-proxy/passes</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-XHeaders">XHeaders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deleteLength">deleteLength</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stream">stream</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeout">timeout</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeChunked">removeChunked</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setConnection">setConnection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setRedirectHostRewrite">setRedirectHostRewrite</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-writeHeaders">writeHeaders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-XHeaders">XHeaders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-checkMethodAndHeader">checkMethodAndHeader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stream">stream</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-writeStatusCode">writeStatusCode</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">lib/es-http-proxy/ProxyServer.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">import { inherits } from &apos;util&apos;
+import { parse as parse_url } from &apos;url&apos;
+import EE3 from &apos;eventemitter3&apos;
+import http from &apos;http&apos;
+import https from &apos;https&apos;
+import * as web from &apos;./passes/web-incoming&apos;
+import * as ws from &apos;./passes/ws-incoming&apos;
+
+/**
+ * Returns a function that creates the loader for
+ * either `ws` or `web`&apos;s  passes.
+ *
+ * Examples:
+ *
+ *    httpProxy.createRightProxy(&apos;ws&apos;)
+ *    // =&gt; [Function]
+ *
+ * @param {String} Type Either &apos;ws&apos; or &apos;web&apos;
+ *&#xA0;
+ * @return {Function} Loader Function that when called returns an iterator for the right passes
+ *
+ * @api private
+ */
+
+export function createRightProxy(type) {
+
+  return function(options) {
+    return function(req, res /*, [head], [opts] */) {
+      let passes = (type === &apos;ws&apos;) ? this.wsPasses : this.webPasses
+      let args = [].slice.call(arguments)
+      let cntr = args.length - 1
+      let head
+      let cbl
+
+      /* optional args parse begin */
+      if(typeof args[cntr] === &apos;function&apos;) {
+        cbl = args[cntr]
+        cntr--
+      }
+
+      if(
+        !(args[cntr] instanceof Buffer) &amp;&amp;
+        args[cntr] !== res
+      ) {
+        //Overwrite with request options
+        options = { ...options, ...args[cntr] }
+        cntr--
+      }
+
+      if(args[cntr] instanceof Buffer)
+        head = args[cntr]
+
+      /* optional args parse end */
+      const argKeys = [ &apos;target&apos;, &apos;forward&apos; ]
+      argKeys.forEach(e =&gt; {
+        if (typeof options[e] === &apos;string&apos;)
+          options[e] = parse_url(options[e])
+      })
+
+      if (!options.target &amp;&amp; !options.forward)
+        return this.emit(&apos;error&apos;, new Error(&apos;Must provide a proper URL as target&apos;))
+
+      for(var i=0; i &lt; passes.length; i++) {
+        /**
+         * Call of passes functions
+         * pass(req, res, options, head)
+         *
+         * In WebSockets case the `res` variable
+         * refer to the connection socket
+         * pass(req, socket, options, head)
+         */
+        if(passes[i](req, res, options, head, this, cbl)) { // passes can return a truthy value to halt the loop
+          break
+        }
+      }
+    }
+  }
+}
+
+export default class ProxyServer extends EE3 {
+  constructor(options) {
+    super(options)
+    options = options || {}
+    options.prependPath = options.prependPath === false ? false : true
+
+    this.web = this.proxyRequest           = createRightProxy(&apos;web&apos;)(options)
+    this.ws  = this.proxyWebsocketRequest  = createRightProxy(&apos;ws&apos;)(options)
+    this.options = options
+
+    this.webPasses = Object.keys(web).map(pass =&gt; web[pass])
+    this.wsPasses = Object.keys(ws).map(pass =&gt; ws[pass])
+    this.on(&apos;error&apos;, this.onError, this)
+  }
+  onError = err =&gt; {
+    //
+    // Remark: Replicate node core behavior using EE3
+    // so we force people to handle their own errors
+    //
+    if(this.listeners(&apos;error&apos;).length === 1)
+      throw err
+  };
+
+  listen = (port, hostname) =&gt; {
+    const closure = (req, res) =&gt; { this.web(req, res) }
+    this._server  = this.options.ssl ?
+      https.createServer(this.options.ssl, closure) :
+      http.createServer(closure)
+
+    if(this.options.ws)
+      this._server.on(&apos;upgrade&apos;, (req, socket, head) =&gt; { this.ws(req, socket, head) })
+    this._server.listen(port, hostname)
+    return this
+  };
+
+  close = callback =&gt; {
+    if (this._server) {
+      this._server.close(() =&gt; {
+        this._server = null
+        if (callback)
+          callback.apply(null, arguments)
+      })
+    }
+  };
+
+  before = (type, passName, callback) =&gt; {
+    if (type !== &apos;ws&apos; &amp;&amp; type !== &apos;web&apos;)
+      throw new Error(&apos;type must be `web` or `ws`&apos;)
+    let passes = (type === &apos;ws&apos;) ? this.wsPasses : this.webPasses
+    let i = false
+
+    passes.forEach((v, idx) =&gt; { if(v.name === passName) i = idx })
+
+    if(i === false) throw new Error(&apos;No such pass&apos;)
+    passes.splice(i, 0, callback)
+  };
+
+  after = (type, passName, callback) =&gt; {
+    if (type !== &apos;ws&apos; &amp;&amp; type !== &apos;web&apos;)
+      throw new Error(&apos;type must be `web` or `ws`&apos;)
+    let passes = (type === &apos;ws&apos;) ? this.wsPasses : this.webPasses
+    let i = false
+
+    passes.forEach((v, idx) =&gt; {
+      if(v.name === passName) i = idx
+    })
+
+    if(i === false) throw new Error(&apos;No such pass&apos;)
+
+    passes.splice(i++, 0, callback)
+  };
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
