@@ -1,0 +1,928 @@
+{
+  "type": "Program",
+  "start": 0,
+  "end": 2429,
+  "loc": {
+    "start": {
+      "line": 1,
+      "column": 0
+    },
+    "end": {
+      "line": 61,
+      "column": 0
+    }
+  },
+  "sourceType": "module",
+  "body": [
+    {
+      "type": "ImportDeclaration",
+      "start": 0,
+      "end": 23,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 23
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 7,
+          "end": 11,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 7
+            },
+            "end": {
+              "line": 1,
+              "column": 11
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 7,
+            "end": 11,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 7
+              },
+              "end": {
+                "line": 1,
+                "column": 11
+              }
+            },
+            "name": "http"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 17,
+        "end": 23,
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 17
+          },
+          "end": {
+            "line": 1,
+            "column": 23
+          }
+        },
+        "value": "http",
+        "rawValue": "http",
+        "raw": "'http'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 25,
+      "end": 50,
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 2,
+          "column": 25
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 32,
+          "end": 37,
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 7
+            },
+            "end": {
+              "line": 2,
+              "column": 12
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 32,
+            "end": 37,
+            "loc": {
+              "start": {
+                "line": 2,
+                "column": 7
+              },
+              "end": {
+                "line": 2,
+                "column": 12
+              }
+            },
+            "name": "https"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 43,
+        "end": 50,
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 18
+          },
+          "end": {
+            "line": 2,
+            "column": 25
+          }
+        },
+        "value": "https",
+        "rawValue": "https",
+        "raw": "'https'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 52,
+      "end": 73,
+      "loc": {
+        "start": {
+          "line": 3,
+          "column": 0
+        },
+        "end": {
+          "line": 3,
+          "column": 21
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 59,
+          "end": 62,
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 7
+            },
+            "end": {
+              "line": 3,
+              "column": 10
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 59,
+            "end": 62,
+            "loc": {
+              "start": {
+                "line": 3,
+                "column": 7
+              },
+              "end": {
+                "line": 3,
+                "column": 10
+              }
+            },
+            "name": "url"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 68,
+        "end": 73,
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 16
+          },
+          "end": {
+            "line": 3,
+            "column": 21
+          }
+        },
+        "value": "url",
+        "rawValue": "url",
+        "raw": "'url'"
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "start": 75,
+      "end": 114,
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 39
+        }
+      },
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "start": 82,
+          "end": 93,
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 7
+            },
+            "end": {
+              "line": 4,
+              "column": 18
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 82,
+            "end": 93,
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 7
+              },
+              "end": {
+                "line": 4,
+                "column": 18
+              }
+            },
+            "name": "ProxyServer"
+          }
+        }
+      ],
+      "importKind": "value",
+      "source": {
+        "type": "Literal",
+        "start": 99,
+        "end": 114,
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 24
+          },
+          "end": {
+            "line": 4,
+            "column": 39
+          }
+        },
+        "value": "./ProxyServer",
+        "rawValue": "./ProxyServer",
+        "raw": "'./ProxyServer'",
+        "leadingComments": null,
+        "trailingComments": null
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n * Export the proxy \"Server\" as the main export.\r\n ",
+          "start": 118,
+          "end": 176,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 8,
+              "column": 3
+            }
+          },
+          "range": [
+            118,
+            176
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "start": 179,
+      "end": 205,
+      "loc": {
+        "start": {
+          "line": 9,
+          "column": 1
+        },
+        "end": {
+          "line": 9,
+          "column": 27
+        }
+      },
+      "declaration": {
+        "type": "Identifier",
+        "start": 194,
+        "end": 205,
+        "loc": {
+          "start": {
+            "line": 9,
+            "column": 16
+          },
+          "end": {
+            "line": 9,
+            "column": 27
+          }
+        },
+        "name": "ProxyServer",
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\r\n * Export the proxy \"Server\" as the main export.\r\n ",
+            "start": 118,
+            "end": 176,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 8,
+                "column": 3
+              }
+            },
+            "range": [
+              118,
+              176
+            ]
+          }
+        ],
+        "trailingComments": [
+          {
+            "type": "Block",
+            "value": "*\r\n * Creates the proxy server.\r\n *\r\n * Examples:\r\n *\r\n *    httpProxy.createProxyServer({ .. }, 8000)\r\n *    // => '{ web: [Function], ws: [Function] ... }'\r\n *\r\n * @param {Object} Options Config object passed to the proxy\r\n *\r\n * @return {Object} Proxy Proxy object with handlers for `ws` and `web` requests\r\n *\r\n * @api public\r\n ",
+            "start": 209,
+            "end": 545,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 0
+              },
+              "end": {
+                "line": 24,
+                "column": 3
+              }
+            },
+            "range": [
+              209,
+              545
+            ]
+          },
+          {
+            "type": "Block",
+            "value": "* TODO: WHY SO MANY ALIASES ",
+            "start": 549,
+            "end": 581,
+            "loc": {
+              "start": {
+                "line": 26,
+                "column": 0
+              },
+              "end": {
+                "line": 26,
+                "column": 32
+              }
+            },
+            "range": [
+              549,
+              581
+            ]
+          },
+          {
+            "type": "CommentLine",
+            "value": "export const createServer = createProxyServer",
+            "start": 583,
+            "end": 630,
+            "loc": {
+              "start": {
+                "line": 27,
+                "column": 0
+              },
+              "end": {
+                "line": 27,
+                "column": 47
+              }
+            },
+            "range": [
+              583,
+              630
+            ]
+          },
+          {
+            "type": "CommentLine",
+            "value": "export const createProxy = createProxyServer",
+            "start": 632,
+            "end": 678,
+            "loc": {
+              "start": {
+                "line": 28,
+                "column": 0
+              },
+              "end": {
+                "line": 28,
+                "column": 46
+              }
+            },
+            "range": [
+              632,
+              678
+            ]
+          }
+        ]
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n * Export the proxy \"Server\" as the main export.\r\n ",
+          "start": 118,
+          "end": 176,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 8,
+              "column": 3
+            }
+          },
+          "range": [
+            118,
+            176
+          ]
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n * Creates the proxy server.\r\n *\r\n * Examples:\r\n *\r\n *    httpProxy.createProxyServer({ .. }, 8000)\r\n *    // => '{ web: [Function], ws: [Function] ... }'\r\n *\r\n * @param {Object} Options Config object passed to the proxy\r\n *\r\n * @return {Object} Proxy Proxy object with handlers for `ws` and `web` requests\r\n *\r\n * @api public\r\n ",
+          "start": 209,
+          "end": 545,
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 0
+            },
+            "end": {
+              "line": 24,
+              "column": 3
+            }
+          },
+          "range": [
+            209,
+            545
+          ]
+        },
+        {
+          "type": "Block",
+          "value": "* TODO: WHY SO MANY ALIASES ",
+          "start": 549,
+          "end": 581,
+          "loc": {
+            "start": {
+              "line": 26,
+              "column": 0
+            },
+            "end": {
+              "line": 26,
+              "column": 32
+            }
+          },
+          "range": [
+            549,
+            581
+          ]
+        },
+        {
+          "type": "CommentLine",
+          "value": "export const createServer = createProxyServer",
+          "start": 583,
+          "end": 630,
+          "loc": {
+            "start": {
+              "line": 27,
+              "column": 0
+            },
+            "end": {
+              "line": 27,
+              "column": 47
+            }
+          },
+          "range": [
+            583,
+            630
+          ]
+        },
+        {
+          "type": "CommentLine",
+          "value": "export const createProxy = createProxyServer",
+          "start": 632,
+          "end": 678,
+          "loc": {
+            "start": {
+              "line": 28,
+              "column": 0
+            },
+            "end": {
+              "line": 28,
+              "column": 46
+            }
+          },
+          "range": [
+            632,
+            678
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ExportNamedDeclaration",
+      "start": 680,
+      "end": 2425,
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 0
+        },
+        "end": {
+          "line": 59,
+          "column": 1
+        }
+      },
+      "declaration": {
+        "type": "FunctionDeclaration",
+        "start": 687,
+        "end": 2425,
+        "loc": {
+          "start": {
+            "line": 29,
+            "column": 7
+          },
+          "end": {
+            "line": 59,
+            "column": 1
+          }
+        },
+        "id": {
+          "type": "Identifier",
+          "start": 696,
+          "end": 713,
+          "loc": {
+            "start": {
+              "line": 29,
+              "column": 16
+            },
+            "end": {
+              "line": 29,
+              "column": 33
+            }
+          },
+          "name": "createProxyServer",
+          "leadingComments": null
+        },
+        "generator": false,
+        "expression": false,
+        "async": false,
+        "params": [
+          {
+            "type": "Identifier",
+            "start": 714,
+            "end": 721,
+            "loc": {
+              "start": {
+                "line": 29,
+                "column": 34
+              },
+              "end": {
+                "line": 29,
+                "column": 41
+              }
+            },
+            "name": "options"
+          }
+        ],
+        "body": {
+          "type": "BlockStatement",
+          "start": 723,
+          "end": 2425,
+          "loc": {
+            "start": {
+              "line": 29,
+              "column": 43
+            },
+            "end": {
+              "line": 59,
+              "column": 1
+            }
+          },
+          "body": [
+            {
+              "type": "ReturnStatement",
+              "start": 2391,
+              "end": 2422,
+              "loc": {
+                "start": {
+                  "line": 58,
+                  "column": 2
+                },
+                "end": {
+                  "line": 58,
+                  "column": 33
+                }
+              },
+              "argument": {
+                "type": "NewExpression",
+                "start": 2398,
+                "end": 2422,
+                "loc": {
+                  "start": {
+                    "line": 58,
+                    "column": 9
+                  },
+                  "end": {
+                    "line": 58,
+                    "column": 33
+                  }
+                },
+                "callee": {
+                  "type": "Identifier",
+                  "start": 2402,
+                  "end": 2413,
+                  "loc": {
+                    "start": {
+                      "line": 58,
+                      "column": 13
+                    },
+                    "end": {
+                      "line": 58,
+                      "column": 24
+                    }
+                  },
+                  "name": "ProxyServer"
+                },
+                "arguments": [
+                  {
+                    "type": "Identifier",
+                    "start": 2414,
+                    "end": 2421,
+                    "loc": {
+                      "start": {
+                        "line": 58,
+                        "column": 25
+                      },
+                      "end": {
+                        "line": 58,
+                        "column": 32
+                      }
+                    },
+                    "name": "options"
+                  }
+                ],
+                "leadingComments": null
+              },
+              "leadingComments": [
+                {
+                  "type": "Block",
+                  "value": "\r\n   *  `options` is needed and it must have the following layout:\r\n   *\r\n   *  {\r\n   *    target : <url string to be parsed with the url module>\r\n   *    forward: <url string to be parsed with the url module>\r\n   *    agent  : <object to be passed to http(s).request>\r\n   *    ssl    : <object to be passed to https.createServer()>\r\n   *    ws     : <true/false, if you want to proxy websockets>\r\n   *    xfwd   : <true/false, adds x-forward headers>\r\n   *    secure : <true/false, verify SSL certificate>\r\n   *    toProxy: <true/false, explicitly specify if we are proxying to another proxy>\r\n   *    prependPath: <true/false, Default: true - specify whether you want to prepend the target's path to the proxy path>\r\n   *    ignorePath: <true/false, Default: false - specify whether you want to ignore the proxy path of the incoming request>\r\n   *    localAddress : <Local interface string to bind for outgoing connections>\r\n   *    changeOrigin: <true/false, Default: false - changes the origin of the host header to the target URL>\r\n   *    auth   : Basic authentication i.e. 'user:password' to compute an Authorization header.\r\n   *    hostRewrite: rewrites the location hostname on (301/302/307/308) redirects, Default: null.\r\n   *    autoRewrite: rewrites the location host/port on (301/302/307/308) redirects based on requested host/port. Default: false.\r\n   *    protocolRewrite: rewrites the location protocol on (301/302/307/308) redirects to 'http' or 'https'. Default: null.\r\n   *  }\r\n   *\r\n   *  NOTE: `options.ws` and `options.ssl` are optional.\r\n   *    `options.target and `options.forward` cannot be\r\n   *    both missing\r\n   *  }\r\n   ",
+                  "start": 728,
+                  "end": 2385,
+                  "loc": {
+                    "start": {
+                      "line": 30,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 56,
+                      "column": 5
+                    }
+                  },
+                  "range": [
+                    728,
+                    2385
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\r\n * Export the proxy \"Server\" as the main export.\r\n ",
+            "start": 118,
+            "end": 176,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 0
+              },
+              "end": {
+                "line": 8,
+                "column": 3
+              }
+            },
+            "range": [
+              118,
+              176
+            ]
+          },
+          {
+            "type": "Block",
+            "value": "*\r\n * Creates the proxy server.\r\n *\r\n * Examples:\r\n *\r\n *    httpProxy.createProxyServer({ .. }, 8000)\r\n *    // => '{ web: [Function], ws: [Function] ... }'\r\n *\r\n * @param {Object} Options Config object passed to the proxy\r\n *\r\n * @return {Object} Proxy Proxy object with handlers for `ws` and `web` requests\r\n *\r\n * @api public\r\n ",
+            "start": 209,
+            "end": 545,
+            "loc": {
+              "start": {
+                "line": 11,
+                "column": 0
+              },
+              "end": {
+                "line": 24,
+                "column": 3
+              }
+            },
+            "range": [
+              209,
+              545
+            ]
+          },
+          {
+            "type": "Block",
+            "value": "* TODO: WHY SO MANY ALIASES ",
+            "start": 549,
+            "end": 581,
+            "loc": {
+              "start": {
+                "line": 26,
+                "column": 0
+              },
+              "end": {
+                "line": 26,
+                "column": 32
+              }
+            },
+            "range": [
+              549,
+              581
+            ]
+          },
+          {
+            "type": "CommentLine",
+            "value": "export const createServer = createProxyServer",
+            "start": 583,
+            "end": 630,
+            "loc": {
+              "start": {
+                "line": 27,
+                "column": 0
+              },
+              "end": {
+                "line": 27,
+                "column": 47
+              }
+            },
+            "range": [
+              583,
+              630
+            ]
+          },
+          {
+            "type": "CommentLine",
+            "value": "export const createProxy = createProxyServer",
+            "start": 632,
+            "end": 678,
+            "loc": {
+              "start": {
+                "line": 28,
+                "column": 0
+              },
+              "end": {
+                "line": 28,
+                "column": 46
+              }
+            },
+            "range": [
+              632,
+              678
+            ]
+          }
+        ],
+        "trailingComments": []
+      },
+      "specifiers": [],
+      "source": null,
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\r\n * Export the proxy \"Server\" as the main export.\r\n ",
+          "start": 118,
+          "end": 176,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 0
+            },
+            "end": {
+              "line": 8,
+              "column": 3
+            }
+          },
+          "range": [
+            118,
+            176
+          ]
+        },
+        {
+          "type": "Block",
+          "value": "*\r\n * Creates the proxy server.\r\n *\r\n * Examples:\r\n *\r\n *    httpProxy.createProxyServer({ .. }, 8000)\r\n *    // => '{ web: [Function], ws: [Function] ... }'\r\n *\r\n * @param {Object} Options Config object passed to the proxy\r\n *\r\n * @return {Object} Proxy Proxy object with handlers for `ws` and `web` requests\r\n *\r\n * @api public\r\n ",
+          "start": 209,
+          "end": 545,
+          "loc": {
+            "start": {
+              "line": 11,
+              "column": 0
+            },
+            "end": {
+              "line": 24,
+              "column": 3
+            }
+          },
+          "range": [
+            209,
+            545
+          ]
+        },
+        {
+          "type": "Block",
+          "value": "* TODO: WHY SO MANY ALIASES ",
+          "start": 549,
+          "end": 581,
+          "loc": {
+            "start": {
+              "line": 26,
+              "column": 0
+            },
+            "end": {
+              "line": 26,
+              "column": 32
+            }
+          },
+          "range": [
+            549,
+            581
+          ]
+        },
+        {
+          "type": "CommentLine",
+          "value": "export const createServer = createProxyServer",
+          "start": 583,
+          "end": 630,
+          "loc": {
+            "start": {
+              "line": 27,
+              "column": 0
+            },
+            "end": {
+              "line": 27,
+              "column": 47
+            }
+          },
+          "range": [
+            583,
+            630
+          ]
+        },
+        {
+          "type": "CommentLine",
+          "value": "export const createProxy = createProxyServer",
+          "start": 632,
+          "end": 678,
+          "loc": {
+            "start": {
+              "line": 28,
+              "column": 0
+            },
+            "end": {
+              "line": 28,
+              "column": 46
+            }
+          },
+          "range": [
+            632,
+            678
+          ]
+        }
+      ]
+    }
+  ]
+}

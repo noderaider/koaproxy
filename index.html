@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/noderaider/koaproxy.git" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">es-http-proxy</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/es-http-proxy/ProxyServer.js~ProxyServer.html">ProxyServer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createRightProxy">createRightProxy</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getPort">getPort</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-hasEncryptedConnection">hasEncryptedConnection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setupOutgoing">setupOutgoing</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setupSocket">setupSocket</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-urlJoin">urlJoin</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-createProxyServer">createProxyServer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-isSSL">isSSL</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">es-http-proxy/passes</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-XHeaders">XHeaders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-deleteLength">deleteLength</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stream">stream</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-timeout">timeout</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-removeChunked">removeChunked</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setConnection">setConnection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-setRedirectHostRewrite">setRedirectHostRewrite</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-writeHeaders">writeHeaders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-XHeaders">XHeaders</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-checkMethodAndHeader">checkMethodAndHeader</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-stream">stream</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-writeStatusCode">writeStatusCode</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h2 id="-tixinc-config-https-github-com-tixinc-config-"><a href="https://github.com/tixinc/config">@tixinc/config</a></h2>
+<p><strong>This module contains all dependencies to build client and server configuration files for all @tixinc modules.</strong></p>
+<h3 id="install-from-command-line-interface-in-an-tixinc-module-folder-">Install (from command line interface in an @tixinc module folder)</h3>
+<p><code>npm i -S @tixinc/config@latest</code></p>
+<hr>
+<h2 id="test">TEST</h2>
+<p><strong>Unit tests output for current release:</strong></p>
+<h1 id="toc">TOC</h1>
+<ul>
+<li><a href="#libes-http-proxycommonjs">lib/es-http-proxy/common.js</a><ul>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing">#setupOutgoing</a><ul>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing">outgoing</a><ul>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-host">#host</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-hostname">#hostname</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-socketpath">#socketPath</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-port">#port</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-agent">#agent</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-method">#method</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-path">#path</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-localaddress">#localAddress</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-auth">#auth</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-pro">#pro</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-fizz">#fizz</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-outgoing-overwritten">#overwritten</a></li>
+</ul>
+</li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-when-using-ignorepath">when using ignorePath</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-when-using-changeorigin">when using changeOrigin</a></li>
+<li><a href="#libes-http-proxycommonjs-setupoutgoing-should-not-pass-null-as-last-arg-to-urljoin">should not pass null as last arg to #urlJoin</a></li>
+</ul>
+</li>
+<li><a href="#libes-http-proxycommonjs-setupsocket">#setupSocket</a><ul>
+<li><a href="#libes-http-proxycommonjs-setupsocket-should-setup-a-socket">should setup a socket</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#libes-http-proxypasseswebjs">lib/es-http-proxy/passes/web.js</a><ul>
+<li><a href="#libes-http-proxypasseswebjs-deletelength">#deleteLength</a></li>
+<li><a href="#libes-http-proxypasseswebjs-timeout">#timeout</a></li>
+<li><a href="#libes-http-proxypasseswebjs-xheaders">#XHeaders</a></li>
+</ul>
+</li>
+<li><a href="#createproxyserverweb-using-own-http-server">#createProxyServer.web() using own http server</a></li>
+<li><a href="#libes-http-proxypassesweb-outgoingjs">lib/es-http-proxy/passes/web-outgoing.js</a><ul>
+<li><a href="#libes-http-proxypassesweb-outgoingjs-setredirecthostrewrite">#setRedirectHostRewrite</a><ul>
+<li><a href="#libes-http-proxypassesweb-outgoingjs-setredirecthostrewrite-rewrites-location-host-with-hostrewrite">rewrites location host with hostRewrite</a></li>
+<li><a href="#libes-http-proxypassesweb-outgoingjs-setredirecthostrewrite-rewrites-location-host-with-autorewrite">rewrites location host with autoRewrite</a></li>
+<li><a href="#libes-http-proxypassesweb-outgoingjs-setredirecthostrewrite-rewrites-location-protocol-with-protocolrewrite">rewrites location protocol with protocolRewrite</a></li>
+</ul>
+</li>
+<li><a href="#libes-http-proxypassesweb-outgoingjs-setconnection">#setConnection</a></li>
+<li><a href="#libes-http-proxypassesweb-outgoingjs-writestatuscode">#writeStatusCode</a></li>
+<li><a href="#libes-http-proxypassesweb-outgoingjs-writeheaders">#writeHeaders</a></li>
+<li><a href="#libes-http-proxypassesweb-outgoingjs-removechunked">#removeChunked</a></li>
+</ul>
+</li>
+<li><a href="#libes-http-proxypassesws-incomingjs">lib/es-http-proxy/passes/ws-incoming.js</a><ul>
+<li><a href="#libes-http-proxypassesws-incomingjs-checkmethodandheader">#checkMethodAndHeader</a></li>
+<li><a href="#libes-http-proxypassesws-incomingjs-xheaders">#XHeaders</a></li>
+</ul>
+</li>
+<li><a href="#proxyserver">ProxyServer</a></li>
+<li><a href="#libes-http-proxyjs">lib/es-http-proxy.js</a><ul>
+<li><a href="#libes-http-proxyjs-createproxyserver">#createProxyServer</a><ul>
+<li><a href="#libes-http-proxyjs-createproxyserver-should-return-an-object-otherwise">should return an object otherwise</a></li>
+</ul>
+</li>
+<li><a href="#libes-http-proxyjs-createproxyserver-with-forward-options-and-using-web-incoming-passes">#createProxyServer with forward options and using web-incoming passes</a></li>
+<li><a href="#libes-http-proxyjs-createproxyserver-using-the-web-incoming-passes">#createProxyServer using the web-incoming passes</a></li>
+<li><a href="#libes-http-proxyjs-createproxyserver-method-with-error-response">#createProxyServer() method with error response</a></li>
+<li><a href="#libes-http-proxyjs-createproxyserver-setting-the-correct-timeout-value">#createProxyServer setting the correct timeout value</a></li>
+<li><a href="#libes-http-proxyjs-createproxyserver-using-the-ws-incoming-passes">#createProxyServer using the ws-incoming passes</a></li>
+<li><a href="#libes-http-proxyjs-https-createproxyserver">HTTPS #createProxyServer</a><ul>
+<li><a href="#libes-http-proxyjs-https-createproxyserver-https-to-http">HTTPS to HTTP</a></li>
+<li><a href="#libes-http-proxyjs-https-createproxyserver-http-to-https">HTTP to HTTPS</a></li>
+<li><a href="#libes-http-proxyjs-https-createproxyserver-https-to-https">HTTPS to HTTPS</a></li>
+<li><a href="#libes-http-proxyjs-https-createproxyserver-https-not-allow-ssl-self-signed">HTTPS not allow SSL self signed</a></li>
+<li><a href="#libes-http-proxyjs-https-createproxyserver-https-to-http-using-own-server">HTTPS to HTTP using own server</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#es-http-proxy-examples">es-http-proxy examples</a><ul>
+<li><a href="#es-http-proxy-examples-before-testing-examples">Before testing examples</a></li>
+<li><a href="#es-http-proxy-examples-requiring-all-the-examples">Requiring all the examples</a>
+<a name=""></a></li>
+</ul>
+</li>
+</ul>
+<p><a name="libes-http-proxycommonjs"></a></p>
+<h1 id="lib-es-http-proxy-common-js">lib/es-http-proxy/common.js</h1>
+<p><a name="libes-http-proxycommonjs-setupoutgoing"></a></p>
+<h2 id="-setupoutgoing">#setupOutgoing</h2>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(setupOutgoing);</code>
+</code></pre>
+<p>should be a function.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return setupOutgoing.should.be.a(&apos;function&apos;);</code>
+</code></pre>
+<p>should not override agentless upgrade header.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { agent: undefined,
+    target: { host: &apos;hey&apos;,
+        hostname: &apos;how&apos;,
+        socketPath: &apos;are&apos;,
+        port: &apos;you&apos; },
+    headers: { &apos;connection&apos;: &apos;upgrade&apos; } }, { method: &apos;i&apos;,
+    url: &apos;am&apos;,
+    headers: { &apos;pro&apos;: &apos;xy&apos;, &apos;overwritten&apos;: false } });
+(0, _chai.expect)(outgoing.headers.connection).to.eql(&apos;upgrade&apos;);</code>
+</code></pre>
+<p>should not override agentless connection: contains upgrade.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { agent: undefined,
+    target: { host: &apos;hey&apos;,
+        hostname: &apos;how&apos;,
+        socketPath: &apos;are&apos;,
+        port: &apos;you&apos; },
+    headers: { &apos;connection&apos;: &apos;keep-alive, upgrade&apos; } }, { method: &apos;i&apos;,
+    url: &apos;am&apos;,
+    headers: { &apos;pro&apos;: &apos;xy&apos;, &apos;overwritten&apos;: false } });
+(0, _chai.expect)(outgoing.headers.connection).to.eql(&apos;keep-alive, upgrade&apos;);</code>
+</code></pre>
+<p>should override agentless connection: contains improper upgrade.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">// sanity check on upgrade regex
+var outgoing = {};
+common.setupOutgoing(outgoing, { agent: undefined,
+    target: { host: &apos;hey&apos;,
+        hostname: &apos;how&apos;,
+        socketPath: &apos;are&apos;,
+        port: &apos;you&apos; },
+    headers: { &apos;connection&apos;: &apos;keep-alive, not upgrade&apos; } }, { method: &apos;i&apos;,
+    url: &apos;am&apos;,
+    headers: { &apos;pro&apos;: &apos;xy&apos;, &apos;overwritten&apos;: false } });
+(0, _chai.expect)(outgoing.headers.connection).to.eql(&apos;close&apos;);</code>
+</code></pre>
+<p>should override agentless non-upgrade header to close.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { agent: undefined,
+    target: { host: &apos;hey&apos;,
+        hostname: &apos;how&apos;,
+        socketPath: &apos;are&apos;,
+        port: &apos;you&apos; },
+    headers: { &apos;connection&apos;: &apos;xyz&apos; } }, { method: &apos;i&apos;,
+    url: &apos;am&apos;,
+    headers: { &apos;pro&apos;: &apos;xy&apos;, &apos;overwritten&apos;: false } });
+(0, _chai.expect)(outgoing.headers.connection).to.eql(&apos;close&apos;);</code>
+</code></pre>
+<p>should set the agent to false if none is given.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { target: &apos;http://localhost&apos; }, { url: &apos;/&apos; });
+(0, _chai.expect)(outgoing.agent).to.eql(false);</code>
+</code></pre>
+<p>set the port according to the protocol.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { agent: &apos;?&apos;,
+    target: { host: &apos;how&apos;,
+        hostname: &apos;are&apos;,
+        socketPath: &apos;you&apos;,
+        protocol: &apos;https:&apos; } }, { method: &apos;i&apos;,
+    url: &apos;am&apos;,
+    headers: { pro: &apos;xy&apos; } });
+(0, _chai.expect)(outgoing.host).to.eql(&apos;how&apos;);
+(0, _chai.expect)(outgoing.hostname).to.eql(&apos;are&apos;);
+(0, _chai.expect)(outgoing.socketPath).to.eql(&apos;you&apos;);
+(0, _chai.expect)(outgoing.agent).to.eql(&apos;?&apos;);
+(0, _chai.expect)(outgoing.method).to.eql(&apos;i&apos;);
+(0, _chai.expect)(outgoing.path).to.eql(&apos;am&apos;);
+(0, _chai.expect)(outgoing.headers.pro).to.eql(&apos;xy&apos;);
+(0, _chai.expect)(outgoing.port).to.eql(443);</code>
+</code></pre>
+<p>should keep the original target path in the outgoing path.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { target: { path: &apos;some-path&apos; } }, { url: &apos;am&apos; });
+(0, _chai.expect)(outgoing.path).to.eql(&apos;some-path/am&apos;);</code>
+</code></pre>
+<p>should keep the original forward path in the outgoing path.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { target: {},
+    forward: { path: &apos;some-path&apos; } }, { url: &apos;am&apos; }, &apos;forward&apos;);
+(0, _chai.expect)(outgoing.path).to.eql(&apos;some-path/am&apos;);</code>
+</code></pre>
+<p>should properly detect https/wss protocol without the colon.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { target: { protocol: &apos;https&apos;,
+        host: &apos;whatever.com&apos; } }, { url: &apos;/&apos; });
+(0, _chai.expect)(outgoing.port).to.eql(443);</code>
+</code></pre>
+<p>should not prepend the target path to the outgoing path with prependPath = false.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { target: { path: &apos;hellothere&apos; },
+    prependPath: false }, { url: &apos;hi&apos; });
+(0, _chai.expect)(outgoing.path).to.eql(&apos;hi&apos;);</code>
+</code></pre>
+<p>should properly join paths.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { target: { path: &apos;/forward&apos; } }, { url: &apos;/static/path&apos; });
+(0, _chai.expect)(outgoing.path).to.eql(&apos;/forward/static/path&apos;);</code>
+</code></pre>
+<p>should not modify the query string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { target: { path: &apos;/forward&apos; } }, { url: &apos;/?foo=bar//&amp;target=http://foobar.com/?a=1%26b=2&amp;other=2&apos; });
+(0, _chai.expect)(outgoing.path).to.eql(&apos;/forward/?foo=bar//&amp;target=http://foobar.com/?a=1%26b=2&amp;other=2&apos;);</code>
+</code></pre>
+<p>should correctly format the toProxy URL.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+var google = &apos;https://google.com&apos;;
+common.setupOutgoing(outgoing, { target: _url2.default.parse(&apos;http://sometarget.com:80&apos;),
+    toProxy: true }, { url: google });
+(0, _chai.expect)(outgoing.path).to.eql(&apos;/&apos; + google);</code>
+</code></pre>
+<p>should not replace : to :\ when no https word before.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+var google = &apos;https://google.com:/join/join.js&apos;;
+common.setupOutgoing(outgoing, { target: _url2.default.parse(&apos;http://sometarget.com:80&apos;),
+    toProxy: true }, { url: google });
+(0, _chai.expect)(outgoing.path).to.eql(&apos;/&apos; + google);</code>
+</code></pre>
+<p>should not replace : to :\ when no http word before.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+var google = &apos;http://google.com:/join/join.js&apos;;
+common.setupOutgoing(outgoing, { target: _url2.default.parse(&apos;http://sometarget.com:80&apos;),
+    toProxy: true }, { url: google });
+(0, _chai.expect)(outgoing.path).to.eql(&apos;/&apos; + google);</code>
+</code></pre>
+<p>should pass through https client parameters.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { agent: &apos;?&apos;,
+    target: { host: &apos;how&apos;,
+        hostname: &apos;are&apos;,
+        socketPath: &apos;you&apos;,
+        protocol: &apos;https:&apos;,
+        pfx: &apos;my-pfx&apos;,
+        key: &apos;my-key&apos;,
+        passphrase: &apos;my-passphrase&apos;,
+        cert: &apos;my-cert&apos;,
+        ca: &apos;my-ca&apos;,
+        ciphers: &apos;my-ciphers&apos;,
+        secureProtocol: &apos;my-secure-protocol&apos; } }, { method: &apos;i&apos;,
+    url: &apos;am&apos; });
+(0, _chai.expect)(outgoing.pfx).eql(&apos;my-pfx&apos;);
+(0, _chai.expect)(outgoing.key).eql(&apos;my-key&apos;);
+(0, _chai.expect)(outgoing.passphrase).eql(&apos;my-passphrase&apos;);
+(0, _chai.expect)(outgoing.cert).eql(&apos;my-cert&apos;);
+(0, _chai.expect)(outgoing.ca).eql(&apos;my-ca&apos;);
+(0, _chai.expect)(outgoing.ciphers).eql(&apos;my-ciphers&apos;);
+(0, _chai.expect)(outgoing.secureProtocol).eql(&apos;my-secure-protocol&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing"></a></p>
+<h3 id="outgoing">outgoing</h3>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(outgoing);</code>
+</code></pre>
+<p>should be an object.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return outgoing.should.be.an(&apos;object&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-host"></a></p>
+<h4 id="-host">#host</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal hey.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-hostname"></a></p>
+<h4 id="-hostname">#hostname</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal how.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-socketpath"></a></p>
+<h4 id="-socketpath">#socketPath</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal are.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-port"></a></p>
+<h4 id="-port">#port</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal you.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-agent"></a></p>
+<h4 id="-agent">#agent</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal ?.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-method"></a></p>
+<h4 id="-method">#method</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal i.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-path"></a></p>
+<h4 id="-path">#path</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal am.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-localaddress"></a></p>
+<h4 id="-localaddress">#localAddress</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal local.address.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-auth"></a></p>
+<h4 id="-auth">#auth</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal username:pass.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-pro"></a></p>
+<h4 id="-pro">#pro</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal xy.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-fizz"></a></p>
+<h4 id="-fizz">#fizz</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a string.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal bang.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-outgoing-overwritten"></a></p>
+<h4 id="-overwritten">#overwritten</h4>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(prop);</code>
+</code></pre>
+<p>should be a boolean.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.be.a(propType);</code>
+</code></pre>
+<p>should equal true.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return prop.should.eql(propValue);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-when-using-ignorepath"></a></p>
+<h3 id="when-using-ignorepath">when using ignorePath</h3>
+<p>should ignore the path of the <code>req.url</code> passed in but use the target path.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+var myEndpoint = &apos;https://whatever.com/some/crazy/path/whoooo&apos;;
+common.setupOutgoing(outgoing, { target: _url2.default.parse(myEndpoint),
+    ignorePath: true }, { url: &apos;/more/crazy/pathness&apos; });
+(0, _chai.expect)(outgoing.path).to.eql(&apos;/some/crazy/path/whoooo&apos;);</code>
+</code></pre>
+<p>and prependPath: false, it should ignore path of target and incoming request.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+var myEndpoint = &apos;https://whatever.com/some/crazy/path/whoooo&apos;;
+common.setupOutgoing(outgoing, { target: _url2.default.parse(myEndpoint),
+    ignorePath: true,
+    prependPath: false }, { url: &apos;/more/crazy/pathness&apos; });
+(0, _chai.expect)(outgoing.path).to.eql(&apos;&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-when-using-changeorigin"></a></p>
+<h3 id="when-using-changeorigin">when using changeOrigin</h3>
+<p>should correctly set the port to the host when it is a non-standard port using url.parse.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+var myEndpoint = &apos;https://myCouch.com:6984&apos;;
+common.setupOutgoing(outgoing, { target: _url2.default.parse(myEndpoint),
+    changeOrigin: true }, { url: &apos;/&apos; });
+(0, _chai.expect)(outgoing.headers.host).to.eql(&apos;mycouch.com:6984&apos;);</code>
+</code></pre>
+<p>should correctly set the port to the host when it is a non-standard port when setting host and port manually (which ignores port).</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var outgoing = {};
+common.setupOutgoing(outgoing, { target: { protocol: &apos;https:&apos;,
+        host: &apos;mycouch.com&apos;,
+        port: 6984 },
+    changeOrigin: true }, { url: &apos;/&apos; });
+(0, _chai.expect)(outgoing.headers.host).to.eql(&apos;mycouch.com:6984&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupoutgoing-should-not-pass-null-as-last-arg-to-urljoin"></a></p>
+<h3 id="should-not-pass-null-as-last-arg-to-urljoin">should not pass null as last arg to #urlJoin</h3>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(outgoing);</code>
+</code></pre>
+<p>should have path.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return outgoing.should.be.an(&apos;object&apos;).that.has.property(&apos;path&apos;).that.is.a(&apos;string&apos;);</code>
+</code></pre>
+<p>should be empty.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return outgoing.path.should.eql(&apos;&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxycommonjs-setupsocket"></a></p>
+<h2 id="-setupsocket">#setupSocket</h2>
+<p><a name="libes-http-proxycommonjs-setupsocket-should-setup-a-socket"></a></p>
+<h3 id="should-setup-a-socket">should setup a socket</h3>
+<p>should still have socketConfig.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(socketConfig);</code>
+</code></pre>
+<p>should have timeout.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return socketConfig.should.be.an(&apos;object&apos;).that.has.property(&apos;timeout&apos;).that.is.a(&apos;number&apos;);</code>
+</code></pre>
+<p>should have nodelay.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return socketConfig.should.be.an(&apos;object&apos;).that.has.property(&apos;nodelay&apos;).that.is.a(&apos;boolean&apos;);</code>
+</code></pre>
+<p>should have keepalive.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return socketConfig.should.be.an(&apos;object&apos;).that.has.property(&apos;keepalive&apos;).that.is.a(&apos;boolean&apos;);</code>
+</code></pre>
+<p>should have correct timeout value.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return socketConfig.timeout.should.eql(0);</code>
+</code></pre>
+<p>should have correct nodelay value.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return socketConfig.nodelay.should.eql(true);</code>
+</code></pre>
+<p>should have correct keepalive value.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return socketConfig.keepalive.should.eql(true);</code>
+</code></pre>
+<p><a name="libes-http-proxypasseswebjs"></a></p>
+<h1 id="lib-es-http-proxy-passes-web-js">lib/es-http-proxy/passes/web.js</h1>
+<p><a name="libes-http-proxypasseswebjs-deletelength"></a></p>
+<h2 id="-deletelength">#deleteLength</h2>
+<p>should change <code>content-length</code> for DELETE requests.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var stubRequest = {
+  method: &apos;DELETE&apos;,
+  headers: {}
+};
+webPasses.deleteLength(stubRequest, {}, {});
+(0, _chai.expect)(stubRequest.headers[&apos;content-length&apos;]).to.eql(&apos;0&apos;);</code>
+</code></pre>
+<p>should change <code>content-length</code> for OPTIONS requests.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var stubRequest = {
+  method: &apos;OPTIONS&apos;,
+  headers: {}
+};
+webPasses.deleteLength(stubRequest, {}, {});
+(0, _chai.expect)(stubRequest.headers[&apos;content-length&apos;]).to.eql(&apos;0&apos;);</code>
+</code></pre>
+<p>should remove <code>transfer-encoding</code> from empty DELETE requests.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var stubRequest = {
+  method: &apos;DELETE&apos;,
+  headers: {
+    &apos;transfer-encoding&apos;: &apos;chunked&apos;
+  }
+};
+webPasses.deleteLength(stubRequest, {}, {});
+(0, _chai.expect)(stubRequest.headers[&apos;content-length&apos;]).to.eql(&apos;0&apos;);
+(0, _chai.expect)(stubRequest.headers).to.not.have.key(&apos;transfer-encoding&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxypasseswebjs-timeout"></a></p>
+<h2 id="-timeout">#timeout</h2>
+<p>should set timeout on the socket.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var done = false,
+    stubRequest = {
+  socket: {
+    setTimeout: function setTimeout(value) {
+      done = value;
+    }
+  }
+};
+webPasses.timeout(stubRequest, {}, { timeout: 5000 });
+(0, _chai.expect)(done).to.eql(5000);</code>
+</code></pre>
+<p><a name="libes-http-proxypasseswebjs-xheaders"></a></p>
+<h2 id="-xheaders">#XHeaders</h2>
+<p>set the correct x-forwarded-* headers.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">webPasses.XHeaders(stubRequest, {}, { xfwd: true });
+(0, _chai.expect)(stubRequest.headers[&apos;x-forwarded-for&apos;]).to.eql(&apos;192.168.1.2&apos;);
+(0, _chai.expect)(stubRequest.headers[&apos;x-forwarded-port&apos;]).to.eql(&apos;8080&apos;);
+(0, _chai.expect)(stubRequest.headers[&apos;x-forwarded-proto&apos;]).to.eql(&apos;http&apos;);</code>
+</code></pre>
+<p><a name="createproxyserverweb-using-own-http-server"></a></p>
+<h1 id="-createproxyserver-web-using-own-http-server">#createProxyServer.web() using own http server</h1>
+<p><a name="libes-http-proxypassesweb-outgoingjs"></a></p>
+<h1 id="lib-es-http-proxy-passes-web-outgoing-js">lib/es-http-proxy/passes/web-outgoing.js</h1>
+<p><a name="libes-http-proxypassesweb-outgoingjs-setredirecthostrewrite"></a></p>
+<h2 id="-setredirecthostrewrite">#setRedirectHostRewrite</h2>
+<p><a name="libes-http-proxypassesweb-outgoingjs-setredirecthostrewrite-rewrites-location-host-with-hostrewrite"></a></p>
+<h3 id="rewrites-location-host-with-hostrewrite">rewrites location host with hostRewrite</h3>
+<p>on 301.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://ext-manual.com/&apos;);</code>
+</code></pre>
+<p>on 302.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://ext-manual.com/&apos;);</code>
+</code></pre>
+<p>on 307.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://ext-manual.com/&apos;);</code>
+</code></pre>
+<p>on 308.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://ext-manual.com/&apos;);</code>
+</code></pre>
+<p>not on 200.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = 200;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://backend.com/&apos;);</code>
+</code></pre>
+<p>not when hostRewrite is unset.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">delete this.options.hostRewrite;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://backend.com/&apos;);</code>
+</code></pre>
+<p>takes precedence over autoRewrite.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.options.autoRewrite = true;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://ext-manual.com/&apos;);</code>
+</code></pre>
+<p>not when the redirected location does not match target host.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = 302;
+this.proxyRes.headers.location = &apos;http://some-other/&apos;;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://some-other/&apos;);</code>
+</code></pre>
+<p>not when the redirected location does not match target port.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = 302;
+this.proxyRes.headers.location = &apos;http://backend.com:8080/&apos;;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://backend.com:8080/&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxypassesweb-outgoingjs-setredirecthostrewrite-rewrites-location-host-with-autorewrite"></a></p>
+<h3 id="rewrites-location-host-with-autorewrite">rewrites location host with autoRewrite</h3>
+<p>on 301.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://ext-auto.com/&apos;);</code>
+</code></pre>
+<p>on 302.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://ext-auto.com/&apos;);</code>
+</code></pre>
+<p>on 307.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://ext-auto.com/&apos;);</code>
+</code></pre>
+<p>on 308.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://ext-auto.com/&apos;);</code>
+</code></pre>
+<p>not on 200.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = 200;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://backend.com/&apos;);</code>
+</code></pre>
+<p>not when autoRewrite is unset.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">delete this.options.autoRewrite;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://backend.com/&apos;);</code>
+</code></pre>
+<p>not when the redirected location does not match target host.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = 302;
+this.proxyRes.headers.location = &apos;http://some-other/&apos;;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://some-other/&apos;);</code>
+</code></pre>
+<p>not when the redirected location does not match target port.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = 302;
+this.proxyRes.headers.location = &apos;http://backend.com:8080/&apos;;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://backend.com:8080/&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxypassesweb-outgoingjs-setredirecthostrewrite-rewrites-location-protocol-with-protocolrewrite"></a></p>
+<h3 id="rewrites-location-protocol-with-protocolrewrite">rewrites location protocol with protocolRewrite</h3>
+<p>on 301.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;https://backend.com/&apos;);</code>
+</code></pre>
+<p>on 302.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;https://backend.com/&apos;);</code>
+</code></pre>
+<p>on 307.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;https://backend.com/&apos;);</code>
+</code></pre>
+<p>on 308.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = code;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;https://backend.com/&apos;);</code>
+</code></pre>
+<p>not on 200.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.proxyRes.statusCode = 200;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://backend.com/&apos;);</code>
+</code></pre>
+<p>not when protocolRewrite is unset.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">delete this.options.protocolRewrite;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;http://backend.com/&apos;);</code>
+</code></pre>
+<p>works together with hostRewrite.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.options.hostRewrite = &apos;ext-manual.com&apos;;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;https://ext-manual.com/&apos;);</code>
+</code></pre>
+<p>works together with autoRewrite.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.options.autoRewrite = true;
+httpProxy.setRedirectHostRewrite(this.req, {}, this.proxyRes, this.options);
+(0, _chai.expect)(this.proxyRes.headers.location).to.eql(&apos;https://ext-auto.com/&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxypassesweb-outgoingjs-setconnection"></a></p>
+<h2 id="-setconnection">#setConnection</h2>
+<p>set the right connection with 1.0 - <code>close</code>.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var proxyRes = { headers: {} };
+httpProxy.setConnection({ httpVersion: &apos;1.0&apos;, headers: { connection: null } }, {}, proxyRes);
+(0, _chai.expect)(proxyRes.headers.connection).to.eql(&apos;close&apos;);</code>
+</code></pre>
+<p>set the right connection with 1.0 - req.connection.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var proxyRes = { headers: {} };
+httpProxy.setConnection({ httpVersion: &apos;1.0&apos;, headers: { connection: &apos;hey&apos; } }, {}, proxyRes);
+(0, _chai.expect)(proxyRes.headers.connection).to.eql(&apos;hey&apos;);</code>
+</code></pre>
+<p>set the right connection - req.connection.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var proxyRes = { headers: {} };
+httpProxy.setConnection({ httpVersion: null, headers: { connection: &apos;hola&apos; } }, {}, proxyRes);
+(0, _chai.expect)(proxyRes.headers.connection).to.eql(&apos;hola&apos;);</code>
+</code></pre>
+<p>set the right connection - <code>keep-alive</code>.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var proxyRes = { headers: {} };
+httpProxy.setConnection({ httpVersion: null, headers: { connection: null } }, {}, proxyRes);
+(0, _chai.expect)(proxyRes.headers.connection).to.eql(&apos;keep-alive&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxypassesweb-outgoingjs-writestatuscode"></a></p>
+<h2 id="-writestatuscode">#writeStatusCode</h2>
+<p>should write status code.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var res = { writeHead: function writeHead(n) {
+    (0, _chai.expect)(n).to.eql(200);
+  } };
+httpProxy.writeStatusCode({}, res, { statusCode: 200 });</code>
+</code></pre>
+<p><a name="libes-http-proxypassesws-incomingjs"></a></p>
+<h1 id="lib-es-http-proxy-passes-ws-incoming-js">lib/es-http-proxy/passes/ws-incoming.js</h1>
+<p><a name="libes-http-proxypassesws-incomingjs-checkmethodandheader"></a></p>
+<h2 id="-checkmethodandheader">#checkMethodAndHeader</h2>
+<p>should drop non-GET connections.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var destroyCalled = false,
+    stubRequest = { method: &apos;DELETE&apos;, headers: {} },
+    stubSocket = { destroy: function destroy() {
+    // Simulate Socket.destroy() method when call
+    destroyCalled = true;
+  } };
+var returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket);
+(0, _chai.expect)(returnValue).to.eql(true);
+(0, _chai.expect)(destroyCalled).to.eql(true);</code>
+</code></pre>
+<p>should drop connections when no upgrade header.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var destroyCalled = false,
+    stubRequest = { method: &apos;GET&apos;,
+  headers: {} },
+    stubSocket = { destroy: function destroy() {
+    // Simulate Socket.destroy() method when call
+    destroyCalled = true;
+  } };
+var returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket);
+(0, _chai.expect)(returnValue).to.eql(true);
+(0, _chai.expect)(destroyCalled).to.eql(true);</code>
+</code></pre>
+<p>should drop connections when upgrade header is different of <code>websocket</code>.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var destroyCalled = false,
+    stubRequest = { method: &apos;GET&apos;,
+  headers: { upgrade: &apos;anotherprotocol&apos; } },
+    stubSocket = { destroy: function destroy() {
+    // Simulate Socket.destroy() method when call
+    destroyCalled = true;
+  } };
+var returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket);
+(0, _chai.expect)(returnValue).to.eql(true);
+(0, _chai.expect)(destroyCalled).to.eql(true);</code>
+</code></pre>
+<p>should return nothing when all is ok.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var destroyCalled = false,
+    stubRequest = { method: &apos;GET&apos;,
+  headers: { upgrade: &apos;websocket&apos; } },
+    stubSocket = { destroy: function destroy() {
+    // Simulate Socket.destroy() method when call
+    destroyCalled = true;
+  } };
+var returnValue = httpProxy.checkMethodAndHeader(stubRequest, stubSocket);
+(0, _chai.expect)(returnValue).to.eql(undefined);
+(0, _chai.expect)(destroyCalled).to.eql(false);</code>
+</code></pre>
+<p><a name="libes-http-proxypassesws-incomingjs-xheaders"></a></p>
+<h2 id="-xheaders">#XHeaders</h2>
+<p>return if no forward request.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var returnValue = httpProxy.XHeaders({}, {}, {});
+(0, _chai.expect)(returnValue).to.be.undefined;</code>
+</code></pre>
+<p>set the correct x-forwarded-* headers from req.connection.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var stubRequest = { connection: { remoteAddress: &apos;192.168.1.2&apos;,
+    remotePort: &apos;8080&apos; },
+  headers: { host: &apos;192.168.1.2:8080&apos; } };
+httpProxy.XHeaders(stubRequest, {}, { xfwd: true });
+(0, _chai.expect)(stubRequest.headers[&apos;x-forwarded-for&apos;]).to.eql(&apos;192.168.1.2&apos;);
+(0, _chai.expect)(stubRequest.headers[&apos;x-forwarded-port&apos;]).to.eql(&apos;8080&apos;);
+(0, _chai.expect)(stubRequest.headers[&apos;x-forwarded-proto&apos;]).to.eql(&apos;ws&apos;);</code>
+</code></pre>
+<p>set the correct x-forwarded-* headers from req.socket.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var stubRequest = { socket: { remoteAddress: &apos;192.168.1.3&apos;,
+    remotePort: &apos;8181&apos; },
+  connection: { pair: true },
+  headers: { host: &apos;192.168.1.3:8181&apos; } };
+httpProxy.XHeaders(stubRequest, {}, { xfwd: true });
+(0, _chai.expect)(stubRequest.headers[&apos;x-forwarded-for&apos;]).to.eql(&apos;192.168.1.3&apos;);
+(0, _chai.expect)(stubRequest.headers[&apos;x-forwarded-port&apos;]).to.eql(&apos;8181&apos;);
+(0, _chai.expect)(stubRequest.headers[&apos;x-forwarded-proto&apos;]).to.eql(&apos;wss&apos;);</code>
+</code></pre>
+<p><a name="proxyserver"></a></p>
+<h1 id="proxyserver">ProxyServer</h1>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(_ProxyServer2.default);</code>
+</code></pre>
+<p>should be a function.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return _ProxyServer2.default.should.be.a(&apos;function&apos;);</code>
+</code></pre>
+<p>should create instanceof EE3.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return new _ProxyServer2.default().should.be.instanceof(_eventemitter2.default);</code>
+</code></pre>
+<p><a name="libes-http-proxyjs"></a></p>
+<h1 id="lib-es-http-proxy-js">lib/es-http-proxy.js</h1>
+<p><a name="libes-http-proxyjs-createproxyserver"></a></p>
+<h2 id="-createproxyserver">#createProxyServer</h2>
+<p><a name="libes-http-proxyjs-createproxyserver-should-return-an-object-otherwise"></a></p>
+<h3 id="should-return-an-object-otherwise">should return an object otherwise</h3>
+<p>should exist.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return should.exist(obj);</code>
+</code></pre>
+<p>should be an object.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return obj.should.be.an(&apos;object&apos;);</code>
+</code></pre>
+<p>should have web function.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return obj.should.have.property(&apos;web&apos;).that.is.a(&apos;function&apos;);</code>
+</code></pre>
+<p>should have ws function.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return obj.should.have.property(&apos;ws&apos;).that.is.a(&apos;function&apos;);</code>
+</code></pre>
+<p>should have listen function.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">return obj.should.have.property(&apos;listen&apos;).that.is.a(&apos;function&apos;);</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-createproxyserver-with-forward-options-and-using-web-incoming-passes"></a></p>
+<h2 id="-createproxyserver-with-forward-options-and-using-web-incoming-passes">#createProxyServer with forward options and using web-incoming passes</h2>
+<p>should pipe the request using web-incoming#stream method.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  forward: &apos;http://127.0.0.1:&apos; + ports.source
+}).listen(ports.proxy);
+var source = _http2.default.createServer(function (req, res) {
+  /*
+  should.exist(req)
+  should.exist(req.method)
+  */
+  req.method.should.eql(&apos;GET&apos;);
+  /*
+  should.exist(req.headers)
+  should.exist(req.headers.host)
+  */
+  req.headers.host.split(&apos;:&apos;)[1].should.eql(ports.proxy.toString());
+  source.close();
+  proxy.close();
+  done();
+});
+source.listen(ports.source);
+_http2.default.request(&apos;http://127.0.0.1:&apos; + ports.proxy, function () {}).end();</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-createproxyserver-using-the-web-incoming-passes"></a></p>
+<h2 id="-createproxyserver-using-the-web-incoming-passes">#createProxyServer using the web-incoming passes</h2>
+<p>should proxy sse.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port },
+    proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;http://localhost:&apos; + ports.source
+}),
+    proxyServer = proxy.listen(ports.proxy),
+    source = _http2.default.createServer(),
+    sse = new _sse2.default(source, { path: &apos;/&apos; });
+sse.on(&apos;connection&apos;, function (client) {
+  client.send(&apos;Hello over SSE&apos;);
+  client.close();
+});
+source.listen(ports.source);
+var options = { hostname: &apos;localhost&apos;, port: ports.proxy };
+var req = _http2.default.request(options, function (res) {
+  var streamData = &apos;&apos;;
+  res.on(&apos;data&apos;, function (chunk) {
+    streamData += chunk.toString(&apos;utf8&apos;);
+  });
+  res.on(&apos;end&apos;, function (chunk) {
+    //should.exist(streamData)
+    streamData.should.eql(&apos;:ok\n\ndata: Hello over SSE\n\n&apos;);
+    source.close();
+    proxy.close();
+    done();
+  });
+}).end();</code>
+</code></pre>
+<p>should make the request on pipe and finish it.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;http://127.0.0.1:&apos; + ports.source
+}).listen(ports.proxy);
+var source = _http2.default.createServer(function (req, res) {
+  should.exist(req);
+  req.should.be.an(&apos;object&apos;).that.has.property(&apos;method&apos;);
+  req.method.should.eql(&apos;POST&apos;);
+  should.exist(req.headers);
+  should.exist(req.headers[&apos;x-forwarded-for&apos;]);
+  req.headers[&apos;x-forwarded-for&apos;].should.eql(&apos;127.0.0.1&apos;);
+  should.exist(req.headers.host);
+  req.headers.host.split(&apos;:&apos;)[1].should.eql(ports.proxy.toString());
+  source.close();
+  proxy.close();
+  done();
+});
+source.listen(ports.source);
+_http2.default.request({ hostname: &apos;127.0.0.1&apos;,
+  port: ports.proxy,
+  method: &apos;POST&apos;,
+  headers: { &apos;x-forwarded-for&apos;: &apos;127.0.0.1&apos; }
+}, function () {}).end();</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-createproxyserver-using-the-web-incoming-passes"></a></p>
+<h2 id="-createproxyserver-using-the-web-incoming-passes">#createProxyServer using the web-incoming passes</h2>
+<p>should make the request, handle response and finish it.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;http://127.0.0.1:&apos; + ports.source
+}).listen(ports.proxy);
+var source = _http2.default.createServer(function (req, res) {
+  req.method.should.eql(&apos;GET&apos;);
+  req.headers.host.split(&apos;:&apos;)[1].should.eql(ports.proxy.toString());
+  res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/plain&apos; });
+  res.end(&apos;Hello from &apos; + source.address().port);
+});
+source.listen(ports.source);
+_http2.default.request({ hostname: &apos;127.0.0.1&apos;,
+  port: ports.proxy,
+  method: &apos;GET&apos;
+}, function (res) {
+  res.statusCode.should.eql(200);
+  res.on(&apos;data&apos;, function (data) {
+    data.toString().should.eql(&apos;Hello from &apos; + ports.source);
+  });
+  res.on(&apos;end&apos;, function () {
+    source.close();
+    proxy.close();
+    done();
+  });
+}).end();</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-createproxyserver-method-with-error-response"></a></p>
+<h2 id="-createproxyserver-method-with-error-response">#createProxyServer() method with error response</h2>
+<p>should make the request and emit the error event.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;http://127.0.0.1:&apos; + ports.source
+});
+proxy.on(&apos;error&apos;, function (err) {
+  (0, _chai.expect)(err).to.be.an.instanceof(Error);
+  (0, _chai.expect)(err.code).to.eql(&apos;ECONNREFUSED&apos;);
+  proxy.close();
+  done();
+});
+proxy.listen(ports.proxy);
+_http2.default.request({ hostname: &apos;127.0.0.1&apos;,
+  port: ports.proxy,
+  method: &apos;GET&apos;
+}, function () {}).end();</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-createproxyserver-setting-the-correct-timeout-value"></a></p>
+<h2 id="-createproxyserver-setting-the-correct-timeout-value">#createProxyServer setting the correct timeout value</h2>
+<p>should hang up the socket at the timeout.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">this.timeout(30);
+var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({ target: &apos;http://127.0.0.1:&apos; + ports.source,
+  timeout: 3
+}).listen(ports.proxy);
+proxy.on(&apos;error&apos;, function (e) {
+  should.exist(e);
+  e.should.be.instanceof(Error);
+  should.exist(e.code);
+  e.code.should.eql(&apos;ECONNRESET&apos;);
+});
+var source = _http2.default.createServer(function (req, res) {
+  setTimeout(function () {
+    res.end(&apos;At this point the socket should be closed&apos;);
+  }, 5);
+});
+source.listen(ports.source);
+var testReq = _http2.default.request({ hostname: &apos;127.0.0.1&apos;,
+  port: ports.proxy,
+  method: &apos;GET&apos;
+}, function () {});
+testReq.on(&apos;error&apos;, function (e) {
+  (0, _chai.expect)(e).to.be.instanceof(Error);
+  (0, _chai.expect)(e.code).to.eql(&apos;ECONNRESET&apos;);
+  proxy.close();
+  source.close();
+  done();
+});
+testReq.end();</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-createproxyserver-using-the-ws-incoming-passes"></a></p>
+<h2 id="-createproxyserver-using-the-ws-incoming-passes">#createProxyServer using the ws-incoming passes</h2>
+<p>should proxy the websockets stream.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({ target: &apos;ws://127.0.0.1:&apos; + ports.source,
+  ws: true
+});
+var proxyServer = proxy.listen(ports.proxy);
+var destiny = new _ws2.default.Server({ port: ports.source }, function () {
+  var client = new _ws2.default(&apos;ws://127.0.0.1:&apos; + ports.proxy);
+  client.on(&apos;open&apos;, function () {
+    client.send(&apos;hello there&apos;);
+  });
+  client.on(&apos;message&apos;, function (msg) {
+    (0, _chai.expect)(msg).to.eql(&apos;Hello over websockets&apos;);
+    client.close();
+    proxyServer.close();
+    destiny.close();
+    done();
+  });
+});
+destiny.on(&apos;connection&apos;, function (socket) {
+  socket.on(&apos;message&apos;, function (msg) {
+    (0, _chai.expect)(msg).to.eql(&apos;hello there&apos;);
+    socket.send(&apos;Hello over websockets&apos;);
+  });
+});</code>
+</code></pre>
+<p>should emit error on proxy error.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({ target: &apos;ws://127.0.0.1:&apos; + ports.source,
+  ws: true
+});
+var proxyServer = proxy.listen(ports.proxy);
+var client = new _ws2.default(&apos;ws://127.0.0.1:&apos; + ports.proxy);
+client.on(&apos;open&apos;, function () {
+  client.send(&apos;hello there&apos;);
+});
+var count = 0;
+function maybe_done() {
+  count += 1;
+  if (count === 2) done();
+}
+client.on(&apos;error&apos;, function (err) {
+  (0, _chai.expect)(err).to.be.instanceof(Error);
+  (0, _chai.expect)(err.code).to.eql(&apos;ECONNRESET&apos;);
+  maybe_done();
+});
+proxy.on(&apos;error&apos;, function (err) {
+  (0, _chai.expect)(err).to.be.instanceof(Error);
+  (0, _chai.expect)(err.code).to.eql(&apos;ECONNREFUSED&apos;);
+  proxyServer.close();
+  maybe_done();
+});</code>
+</code></pre>
+<p>should close client socket if upstream is closed before upgrade.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var server = _http2.default.createServer();
+server.on(&apos;upgrade&apos;, function (req, socket, head) {
+  var response = [&apos;HTTP/1.1 404 Not Found&apos;, &apos;Content-type: text/html&apos;, &apos;&apos;, &apos;&apos;];
+  socket.write(response.join(&apos;\r\n&apos;));
+  socket.end();
+});
+server.listen(ports.source);
+var proxy = (0, _esHttpProxy.createProxyServer)({ target: &apos;ws://127.0.0.1:&apos; + ports.source,
+  ws: true
+});
+var proxyServer = proxy.listen(ports.proxy);
+var client = new _ws2.default(&apos;ws://127.0.0.1:&apos; + ports.proxy);
+client.on(&apos;open&apos;, function () {
+  client.send(&apos;hello there&apos;);
+});
+client.on(&apos;error&apos;, function (err) {
+  (0, _chai.expect)(err).to.be.instanceof(Error);
+  (0, _chai.expect)(err.code).to.eql(&apos;ECONNRESET&apos;);
+  proxyServer.close();
+  done();
+});</code>
+</code></pre>
+<p>should proxy a socket.io stream.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({ target: &apos;ws://127.0.0.1:&apos; + ports.source,
+  ws: true
+});
+var proxyServer = proxy.listen(ports.proxy);
+var server = _http2.default.createServer();
+var destiny = _socket2.default.listen(server);
+function startSocketIo() {
+  var client = _socket4.default.connect(&apos;ws://127.0.0.1:&apos; + ports.proxy);
+  client.on(&apos;connect&apos;, function () {
+    client.emit(&apos;incoming&apos;, &apos;hello there&apos;);
+  });
+  client.on(&apos;outgoing&apos;, function (data) {
+    (0, _chai.expect)(data).to.eql(&apos;Hello over websockets&apos;);
+    proxyServer.close();
+    server.close();
+    done();
+  });
+}
+server.listen(ports.source);
+server.on(&apos;listening&apos;, startSocketIo);
+destiny.sockets.on(&apos;connection&apos;, function (socket) {
+  socket.on(&apos;incoming&apos;, function (msg) {
+    (0, _chai.expect)(msg).to.eql(&apos;hello there&apos;);
+    socket.emit(&apos;outgoing&apos;, &apos;Hello over websockets&apos;);
+  });
+});</code>
+</code></pre>
+<p>should emit open and close events when socket.io client connects and disconnects.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({ target: &apos;ws://127.0.0.1:&apos; + ports.source,
+  ws: true
+});
+var proxyServer = proxy.listen(ports.proxy);
+var server = _http2.default.createServer();
+var destiny = _socket2.default.listen(server);
+function startSocketIo() {
+  var client = _socket4.default.connect(&apos;ws://127.0.0.1:&apos; + ports.proxy, { rejectUnauthorized: null });
+  client.on(&apos;connect&apos;, function () {
+    client.disconnect();
+  });
+}
+var count = 0;
+proxyServer.on(&apos;open&apos;, function () {
+  count += 1;
+});
+proxyServer.on(&apos;close&apos;, function () {
+  proxyServer.close();
+  server.close();
+  if (count == 1) {
+    done();
+  }
+});
+server.listen(ports.source);
+server.on(&apos;listening&apos;, startSocketIo);</code>
+</code></pre>
+<p>should pass all set-cookie headers to client.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;ws://127.0.0.1:&apos; + ports.source,
+  ws: true
+}),
+    proxyServer = proxy.listen(ports.proxy),
+    destiny = new _ws2.default.Server({ port: ports.source }, function () {
+  var key = new Buffer(Math.random().toString()).toString(&apos;base64&apos;);
+  var requestOptions = {
+    port: ports.proxy,
+    host: &apos;127.0.0.1&apos;,
+    headers: {
+      &apos;Connection&apos;: &apos;Upgrade&apos;,
+      &apos;Upgrade&apos;: &apos;websocket&apos;,
+      &apos;Host&apos;: &apos;ws://127.0.0.1&apos;,
+      &apos;Sec-WebSocket-Version&apos;: 13,
+      &apos;Sec-WebSocket-Key&apos;: key
+    }
+  };
+  var req = _http2.default.request(requestOptions);
+  req.on(&apos;upgrade&apos;, function (res, socket, upgradeHead) {
+    (0, _chai.expect)(res.headers[&apos;set-cookie&apos;].length).to.eql(2);
+    done();
+  });
+  req.end();
+});
+destiny.on(&apos;headers&apos;, function (headers) {
+  headers.push(&apos;Set-Cookie: test1=test1&apos;);
+  headers.push(&apos;Set-Cookie: test2=test2&apos;);
+});</code>
+</code></pre>
+<p>should detect a proxyReq event and modify headers.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port },
+    proxy,
+    proxyServer,
+    destiny;
+proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;ws://127.0.0.1:&apos; + ports.source,
+  ws: true
+});
+proxy.on(&apos;proxyReqWs&apos;, function (proxyReq, req, socket, options, head) {
+  proxyReq.setHeader(&apos;X-Special-Proxy-Header&apos;, &apos;foobar&apos;);
+});
+proxyServer = proxy.listen(ports.proxy);
+destiny = new _ws2.default.Server({ port: ports.source }, function () {
+  var client = new _ws2.default(&apos;ws://127.0.0.1:&apos; + ports.proxy);
+  client.on(&apos;open&apos;, function () {
+    client.send(&apos;hello there&apos;);
+  });
+  client.on(&apos;message&apos;, function (msg) {
+    (0, _chai.expect)(msg).to.eql(&apos;Hello over websockets&apos;);
+    client.close();
+    proxyServer.close();
+    destiny.close();
+    done();
+  });
+});
+destiny.on(&apos;connection&apos;, function (socket) {
+  (0, _chai.expect)(socket.upgradeReq.headers[&apos;x-special-proxy-header&apos;]).to.eql(&apos;foobar&apos;);
+  socket.on(&apos;message&apos;, function (msg) {
+    (0, _chai.expect)(msg).to.eql(&apos;hello there&apos;);
+    socket.send(&apos;Hello over websockets&apos;);
+  });
+});</code>
+</code></pre>
+<p>should forward frames with single frame payload (including on node 4.x).</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var payload = Array(65529).join(&apos;0&apos;);
+var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;ws://127.0.0.1:&apos; + ports.source,
+  ws: true
+}),
+    proxyServer = proxy.listen(ports.proxy),
+    destiny = new _ws2.default.Server({ port: ports.source }, function () {
+  var client = new _ws2.default(&apos;ws://127.0.0.1:&apos; + ports.proxy);
+  client.on(&apos;open&apos;, function () {
+    client.send(payload);
+  });
+  client.on(&apos;message&apos;, function (msg) {
+    (0, _chai.expect)(msg).to.eql(&apos;Hello over websockets&apos;);
+    client.close();
+    proxyServer.close();
+    destiny.close();
+    done();
+  });
+});
+destiny.on(&apos;connection&apos;, function (socket) {
+  socket.on(&apos;message&apos;, function (msg) {
+    (0, _chai.expect)(msg).to.eql(payload);
+    socket.send(&apos;Hello over websockets&apos;);
+  });
+});</code>
+</code></pre>
+<p>should forward continuation frames with big payload (including on node 4.x).</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var payload = Array(65530).join(&apos;0&apos;);
+var ports = { source: gen.port, proxy: gen.port };
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;ws://127.0.0.1:&apos; + ports.source,
+  ws: true
+}),
+    proxyServer = proxy.listen(ports.proxy),
+    destiny = new _ws2.default.Server({ port: ports.source }, function () {
+  var client = new _ws2.default(&apos;ws://127.0.0.1:&apos; + ports.proxy);
+  client.on(&apos;open&apos;, function () {
+    client.send(payload);
+  });
+  client.on(&apos;message&apos;, function (msg) {
+    (0, _chai.expect)(msg).to.eql(&apos;Hello over websockets&apos;);
+    client.close();
+    proxyServer.close();
+    destiny.close();
+    done();
+  });
+});
+destiny.on(&apos;connection&apos;, function (socket) {
+  socket.on(&apos;message&apos;, function (msg) {
+    (0, _chai.expect)(msg).to.eql(payload);
+    socket.send(&apos;Hello over websockets&apos;);
+  });
+});</code>
+</code></pre>
+<p><a name="libes-http-proxyjs"></a></p>
+<h1 id="lib-es-http-proxy-js">lib/es-http-proxy.js</h1>
+<p><a name="libes-http-proxyjs-https-createproxyserver"></a></p>
+<h2 id="https-createproxyserver">HTTPS #createProxyServer</h2>
+<p><a name="libes-http-proxyjs-https-createproxyserver-https-to-http"></a></p>
+<h3 id="https-to-http">HTTPS to HTTP</h3>
+<p>should proxy the request en send back the response.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var source = _http2.default.createServer(function (req, res) {
+  (0, _chai.expect)(req.method).to.eql(&apos;GET&apos;);
+  (0, _chai.expect)(req.headers.host.split(&apos;:&apos;)[1]).to.eql(ports.proxy.toString());
+  res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/plain&apos; });
+  res.end(&apos;Hello from &apos; + ports.source);
+});
+source.listen(ports.source);
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;http://127.0.0.1:&apos; + ports.source,
+  ssl: {
+    key: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-key.pem&apos;)),
+    cert: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-cert.pem&apos;)),
+    ciphers: &apos;AES128-GCM-SHA256&apos;
+  }
+}).listen(ports.proxy);
+_https2.default.request({
+  host: &apos;localhost&apos;,
+  port: ports.proxy,
+  path: &apos;/&apos;,
+  method: &apos;GET&apos;,
+  rejectUnauthorized: false
+}, function (res) {
+  (0, _chai.expect)(res.statusCode).to.eql(200);
+  res.on(&apos;data&apos;, function (data) {
+    (0, _chai.expect)(data.toString()).to.eql(&apos;Hello from &apos; + ports.source);
+  });
+  res.on(&apos;end&apos;, function () {
+    source.close();
+    proxy.close();
+    done();
+  });
+}).end();</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-https-createproxyserver-http-to-https"></a></p>
+<h3 id="http-to-https">HTTP to HTTPS</h3>
+<p>should proxy the request and send back the response.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var source = _https2.default.createServer({
+  key: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-key.pem&apos;)),
+  cert: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-cert.pem&apos;)),
+  ciphers: &apos;AES128-GCM-SHA256&apos;
+}, function (req, res) {
+  (0, _chai.expect)(req.method).to.eql(&apos;GET&apos;);
+  (0, _chai.expect)(req.headers.host.split(&apos;:&apos;)[1]).to.eql(ports.proxy.toString());
+  res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/plain&apos; });
+  res.end(&apos;Hello from &apos; + ports.source);
+});
+source.listen(ports.source);
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;https://127.0.0.1:&apos; + ports.source,
+  // Allow to use SSL self signed
+  secure: false
+}).listen(ports.proxy);
+_http2.default.request({
+  hostname: &apos;127.0.0.1&apos;,
+  port: ports.proxy,
+  method: &apos;GET&apos;
+}, function (res) {
+  (0, _chai.expect)(res.statusCode).to.eql(200);
+  res.on(&apos;data&apos;, function (data) {
+    (0, _chai.expect)(data.toString()).to.eql(&apos;Hello from &apos; + ports.source);
+  });
+  res.on(&apos;end&apos;, function () {
+    source.close();
+    proxy.close();
+    done();
+  });
+}).end();</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-https-createproxyserver-https-to-https"></a></p>
+<h3 id="https-to-https">HTTPS to HTTPS</h3>
+<p>should proxy the request en send back the response.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var source = _https2.default.createServer({
+  key: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-key.pem&apos;)),
+  cert: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-cert.pem&apos;)),
+  ciphers: &apos;AES128-GCM-SHA256&apos;
+}, function (req, res) {
+  (0, _chai.expect)(req.method).to.eql(&apos;GET&apos;);
+  (0, _chai.expect)(req.headers.host.split(&apos;:&apos;)[1]).to.eql(ports.proxy.toString());
+  res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/plain&apos; });
+  res.end(&apos;Hello from &apos; + ports.source);
+});
+source.listen(ports.source);
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;https://127.0.0.1:&apos; + ports.source,
+  ssl: {
+    key: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-key.pem&apos;)),
+    cert: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-cert.pem&apos;)),
+    ciphers: &apos;AES128-GCM-SHA256&apos;
+  },
+  secure: false
+}).listen(ports.proxy);
+_https2.default.request({
+  host: &apos;localhost&apos;,
+  port: ports.proxy,
+  path: &apos;/&apos;,
+  method: &apos;GET&apos;,
+  rejectUnauthorized: false
+}, function (res) {
+  (0, _chai.expect)(res.statusCode).to.eql(200);
+  res.on(&apos;data&apos;, function (data) {
+    (0, _chai.expect)(data.toString()).to.eql(&apos;Hello from &apos; + ports.source);
+  });
+  res.on(&apos;end&apos;, function () {
+    source.close();
+    proxy.close();
+    done();
+  });
+}).end();</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-https-createproxyserver-https-not-allow-ssl-self-signed"></a></p>
+<h3 id="https-not-allow-ssl-self-signed">HTTPS not allow SSL self signed</h3>
+<p>should fail with error.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var source = _https2.default.createServer({
+  key: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-key.pem&apos;)),
+  cert: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-cert.pem&apos;)),
+  ciphers: &apos;AES128-GCM-SHA256&apos;
+}).listen(ports.source);
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  target: &apos;https://127.0.0.1:&apos; + ports.source,
+  secure: true
+});
+proxy.listen(ports.proxy);
+proxy.on(&apos;error&apos;, function (err, req, res) {
+  (0, _chai.expect)(err).to.be.an.instanceof(Error);
+  if (_semver2.default.gt(process.versions.node, &apos;0.12.0&apos;)) {
+    (0, _chai.expect)(err.toString()).to.eql(&apos;Error: self signed certificate&apos;);
+  } else {
+    (0, _chai.expect)(err.toString()).to.eql(&apos;Error: DEPTH_ZERO_SELF_SIGNED_CERT&apos;);
+  }
+  done();
+});
+_http2.default.request({
+  hostname: &apos;127.0.0.1&apos;,
+  port: ports.proxy,
+  method: &apos;GET&apos;
+}).end();</code>
+</code></pre>
+<p><a name="libes-http-proxyjs-https-createproxyserver-https-to-http-using-own-server"></a></p>
+<h3 id="https-to-http-using-own-server">HTTPS to HTTP using own server</h3>
+<p>should proxy the request en send back the response.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var ports = { source: gen.port, proxy: gen.port };
+var source = _http2.default.createServer(function (req, res) {
+  (0, _chai.expect)(req.method).to.eql(&apos;GET&apos;);
+  (0, _chai.expect)(req.headers.host.split(&apos;:&apos;)[1]).to.eql(ports.proxy.toString());
+  res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/plain&apos; });
+  res.end(&apos;Hello from &apos; + ports.source);
+});
+source.listen(ports.source);
+var proxy = (0, _esHttpProxy.createProxyServer)({
+  agent: new _http2.default.Agent({ maxSockets: 2 })
+});
+var ownServer = _https2.default.createServer({
+  key: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-key.pem&apos;)),
+  cert: _fs2.default.readFileSync(_path2.default.join(__dirname, &apos;fixtures&apos;, &apos;agent2-cert.pem&apos;)),
+  ciphers: &apos;AES128-GCM-SHA256&apos;
+}, function (req, res) {
+  proxy.web(req, res, {
+    target: &apos;http://127.0.0.1:&apos; + ports.source
+  });
+}).listen(ports.proxy);
+_https2.default.request({
+  host: &apos;localhost&apos;,
+  port: ports.proxy,
+  path: &apos;/&apos;,
+  method: &apos;GET&apos;,
+  rejectUnauthorized: false
+}, function (res) {
+  (0, _chai.expect)(res.statusCode).to.eql(200);
+  res.on(&apos;data&apos;, function (data) {
+    (0, _chai.expect)(data.toString()).to.eql(&apos;Hello from &apos; + ports.source);
+  });
+  res.on(&apos;end&apos;, function () {
+    source.close();
+    ownServer.close();
+    done();
+  });
+}).end();</code>
+</code></pre>
+<p><a name="es-http-proxy-examples"></a></p>
+<h1 id="es-http-proxy-examples">es-http-proxy examples</h1>
+<p><a name="es-http-proxy-examples-before-testing-examples"></a></p>
+<h2 id="before-testing-examples">Before testing examples</h2>
+<p><a name="es-http-proxy-examples-requiring-all-the-examples"></a></p>
+<h2 id="requiring-all-the-examples">Requiring all the examples</h2>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.7)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
