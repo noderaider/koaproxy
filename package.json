@@ -45,7 +45,7 @@
     "postrelease-gh-pages": "run-s -lnc clean-doc git-add git-commit:doc && git push -u origin master --follow-tags",
     "predoc": "rimraf doc",
     "doc": "esdoc -c ./esdoc.json && ncp CNAME doc/CNAME",
-    "postdoc": "npm run git-save -- doc",
+    "postdoc": "run-s -lnc git-add git-commit:doc",
     "gh-pages-subtree": "git subtree split --prefix doc -b gh-pages",
     "gh-pages-push": "git push -f origin gh-pages:gh-pages",
     "gh-pages-delete": "git branch -D gh-pages",
