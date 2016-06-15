@@ -59,14 +59,13 @@ export default ({}) => ({ 'start': 'run-p -lnc build-watch test-watch'
                           /** ESDOC */
                         , 'predoc': `rimraf ${GH_PAGES_ROOT}`
                         , 'doc': `esdoc -c ./esdoc.json && ncp CNAME ${GH_PAGES_ROOT}/CNAME`
-                        , 'postdoc': 'run-s -lnc git-commit:doc'
 
                           /** GIT COMMANDS */
                         , 'gh-pages-subtree': `git subtree split --prefix ${GH_PAGES_ROOT} -b gh-pages`
                         , 'gh-pages-push': 'git push -f origin gh-pages:gh-pages'
                         , 'gh-pages-delete': 'git branch -D gh-pages'
                         , 'git-add': 'git add -A'
-                        , 'git-commit:doc': 'git commit -am "doc updated" exit 0'
+                        , 'git-commit:doc': 'git commit -am doc'
                         , 'git-push': 'git push --follow-tags'
 
                           /** UPGRADE ALL DEPENDENCIES (REQUIRES npm-check-updates INSTALLED GLOBALLY) */
