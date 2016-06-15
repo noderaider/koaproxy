@@ -31,10 +31,7 @@ implementing components such as reverse proxies and load balancers.
 
 
 
-
 ### Table of Contents
-  * [Installation](#installation)
-  * [Upgrading from 0.8.x ?](#upgrading-from-08x-)
   * [Core Concept](#core-concept)
   * [Use Cases](#use-cases)
     * [Setup a basic stand-alone proxy server](#setup-a-basic-stand-alone-proxy-server)
@@ -52,19 +49,8 @@ implementing components such as reverse proxies and load balancers.
     * [ProxyTable API](#proxytable-api)
     * [Logo](#logo)
   * [Contributing and Issues](#contributing-and-issues)
-  * [License](#license)
+  * [Tests](#tests)
 
-### Installation
-
-`npm install reverse-proxy --save`
-
-**[Back to top](#table-of-contents)**
-
-### Upgrading from 0.8.x ?
-
-Click [here](UPGRADING.md)
-
-**[Back to top](#table-of-contents)**
 
 ### Core Concept
 
@@ -536,7 +522,7 @@ Logo created by [Diego Pasquali](http://dribbble.com/diegopq)
      - [Before testing examples](#es-http-proxy-examples-before-testing-examples)
      - [Requiring all the examples](#es-http-proxy-examples-requiring-all-the-examples)
 <a name=""></a>
- 
+
 <a name="libes-http-proxycommonjs"></a>
 # lib/es-http-proxy/common.js
 <a name="libes-http-proxycommonjs-setupoutgoing"></a>
