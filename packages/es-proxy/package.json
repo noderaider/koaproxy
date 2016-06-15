@@ -1,8 +1,8 @@
 {
-  "name": "es-http-proxy",
-  "version": "0.1.1",
+  "name": "es-proxy",
+  "version": "0.1.0",
   "description": "ES modules reimplementation of node-http-proxy from the ground up.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "dependencies": {
     "chai": "^3.0.0",
     "eventemitter3": "^1.0.0",
