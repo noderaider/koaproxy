@@ -51,7 +51,6 @@ implementing components such as reverse proxies and load balancers.
   * [Contributing and Issues](#contributing-and-issues)
   * [Tests](#tests)
 
-
 ### Core Concept
 
 A new proxy is created by calling `createProxyServer` and passing
@@ -522,7 +521,7 @@ Logo created by [Diego Pasquali](http://dribbble.com/diegopq)
      - [Before testing examples](#es-http-proxy-examples-before-testing-examples)
      - [Requiring all the examples](#es-http-proxy-examples-requiring-all-the-examples)
 <a name=""></a>
-
+ 
 <a name="libes-http-proxycommonjs"></a>
 # lib/es-http-proxy/common.js
 <a name="libes-http-proxycommonjs-setupoutgoing"></a>
