@@ -1,6 +1,6 @@
 {
   "name": "koaproxy-web",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Web http utils for koaproxy.",
   "main": "lib/index.js",
   "scripts": {

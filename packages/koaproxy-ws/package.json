@@ -1,6 +1,6 @@
 {
   "name": "koaproxy-ws",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Web socket utils for koaproxy.",
   "main": "lib/index.js",
   "scripts": {
