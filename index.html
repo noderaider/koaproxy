@@ -57,10 +57,394 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h2 id="-tixinc-config-https-github-com-tixinc-config-"><a href="https://github.com/tixinc/config">@tixinc/config</a></h2>
-<p><strong>This module contains all dependencies to build client and server configuration files for all @tixinc modules.</strong></p>
-<h3 id="install-from-command-line-interface-in-an-tixinc-module-folder-">Install (from command line interface in an @tixinc module folder)</h3>
-<p><code>npm i -S @tixinc/config@latest</code></p>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><p><a href="https://npmjs.com/packages/koaproxy"><img src="https://raw.githubusercontent.com/noderaider/koaproxy/master/public/images/koaproxy.gif" alt="NPM"></a></p>
+<p><strong>proxy for the masses, reimplementation of <a href="https://github.com/nodejitsu/node-http-proxy">node-http-proxy</a> from the ground up for koa 2.</strong></p>
+<p><a href="https://travis-ci.org/noderaider/koaproxy"><img src="https://travis-ci.org/noderaider/koaproxy.svg?branch=master" alt="Build Status"></a>
+<a href="https://codecov.io/gh/noderaider/koaproxy"><img src="https://codecov.io/gh/noderaider/koaproxy/branch/master/graph/badge.svg" alt="codecov"></a></p>
+<p><a href="https://nodei.co/npm/koaproxy/"><img src="https://nodei.co/npm/koaproxy.png?stars=true&amp;downloads=true" alt="NPM"></a></p>
+<h2 id="install">Install</h2>
+<p><code>npm i -S koaproxy</code></p>
+<p><code>koaproxy</code> is an HTTP programmable proxying library that supports
+websockets and is tailored for koa 2 (async / await). It is suitable for
+implementing components such as reverse proxies and load balancers.</p>
+<h2 id="roadmap">Roadmap</h2>
+<p><strong>This library is currently in a state of rewrite. Some of the documentation has not yet been rewritten. Stay tuned.</strong></p>
+<ul>
+<li>Rewrite with ES modules as es-http-proxy - Done</li>
+<li>Get all tests passing with ES6+ mocha - Done</li>
+<li>Write koaproxy<ul>
+<li>async / await friendly promise based</li>
+</ul>
+</li>
+<li>Rewrite docs</li>
+</ul>
+<h3 id="table-of-contents">Table of Contents</h3>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#upgrading-from-08x-">Upgrading from 0.8.x ?</a></li>
+<li><a href="#core-concept">Core Concept</a></li>
+<li><a href="#use-cases">Use Cases</a><ul>
+<li><a href="#setup-a-basic-stand-alone-proxy-server">Setup a basic stand-alone proxy server</a></li>
+<li><a href="#setup-a-stand-alone-proxy-server-with-custom-server-logic">Setup a stand-alone proxy server with custom server logic</a></li>
+<li><a href="#setup-a-stand-alone-proxy-server-with-proxy-request-header-re-writing">Setup a stand-alone proxy server with proxy request header re-writing</a></li>
+<li><a href="#modify-a-response-from-a-proxied-server">Modify a response from a proxied server</a></li>
+<li><a href="#setup-a-stand-alone-proxy-server-with-latency">Setup a stand-alone proxy server with latency</a></li>
+<li><a href="#using-https">Using HTTPS</a></li>
+<li><a href="#proxying-websockets">Proxying WebSockets</a></li>
+</ul>
+</li>
+<li><a href="#options">Options</a></li>
+<li><a href="#listening-for-proxy-events">Listening for proxy events</a></li>
+<li><a href="#shutdown">Shutdown</a></li>
+<li><a href="#miscellaneous">Miscellaneous</a><ul>
+<li><a href="#test">Test</a></li>
+<li><a href="#proxytable-api">ProxyTable API</a></li>
+<li><a href="#logo">Logo</a></li>
+</ul>
+</li>
+<li><a href="#contributing-and-issues">Contributing and Issues</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h3 id="installation">Installation</h3>
+<p><code>npm install reverse-proxy --save</code></p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="upgrading-from-0-8-x-">Upgrading from 0.8.x ?</h3>
+<p>Click <a href="UPGRADING.md">here</a></p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="core-concept">Core Concept</h3>
+<p>A new proxy is created by calling <code>createProxyServer</code> and passing
+an <code>options</code> object as argument (<a href="lib/reverse-proxy.js#L33-L50">valid properties are available here</a>)</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">var httpProxy = require(&apos;reverse-proxy&apos;);
+
+var proxy = httpProxy.createProxyServer(options); // See (&#x2020;)</code>
+</code></pre>
+<p>&#x2020;Unless listen(..) is invoked on the object, this does not create a webserver. See below.</p>
+<p>An object will be returned with four methods:</p>
+<ul>
+<li>web <code>req, res, [options]</code> (used for proxying regular HTTP(S) requests)</li>
+<li>ws <code>req, socket, head, [options]</code> (used for proxying WS(S) requests)</li>
+<li>listen <code>port</code> (a function that wraps the object in a webserver, for your convenience)</li>
+<li>close <code>[callback]</code> (a function that closes the inner webserver and stops listening on given port)</li>
+</ul>
+<p>It is then possible to proxy requests by calling these functions</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">http.createServer(function(req, res) {
+  proxy.web(req, res, { target: &apos;http://mytarget.com:8080&apos; });
+});</code>
+</code></pre>
+<p>Errors can be listened on either using the Event Emitter API</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">proxy.on(&apos;error&apos;, function(e) {
+  ...
+});</code>
+</code></pre>
+<p>or using the callback API</p>
+<pre><code class="lang-javascript"><code class="source-code prettyprint">proxy.web(req, res, { target: &apos;http://mytarget.com:8080&apos; }, function(e) { ... });</code>
+</code></pre>
+<p>When a request is proxied it follows two different pipelines (<a href="lib/reverse-proxy/passes">available here</a>)
+which apply transformations to both the <code>req</code> and <code>res</code> object.
+The first pipeline (ingoing) is responsible for the creation and manipulation of the stream that connects your client to the target.
+The second pipeline (outgoing) is responsible for the creation and manipulation of the stream that, from your target, returns data
+to the client.</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="use-cases">Use Cases</h3>
+<h4 id="setup-a-basic-stand-alone-proxy-server">Setup a basic stand-alone proxy server</h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">var http = require(&apos;http&apos;),
+    httpProxy = require(&apos;reverse-proxy&apos;);
+//
+// Create your proxy server and set the target in the options.
+//
+httpProxy.createProxyServer({target:&apos;http://localhost:9000&apos;}).listen(8000); // See (&#x2020;)
+
+//
+// Create your target server
+//
+http.createServer(function (req, res) {
+  res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/plain&apos; });
+  res.write(&apos;request successfully proxied!&apos; + &apos;\n&apos; + JSON.stringify(req.headers, true, 2));
+  res.end();
+}).listen(9000);</code>
+</code></pre>
+<p>&#x2020;Invoking listen(..) triggers the creation of a web server. Otherwise, just the proxy instance is created.</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h4 id="setup-a-stand-alone-proxy-server-with-custom-server-logic">Setup a stand-alone proxy server with custom server logic</h4>
+<p>This example show how you can proxy a request using your own HTTP server
+and also you can put your own logic to handle the request.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var http = require(&apos;http&apos;),
+    httpProxy = require(&apos;reverse-proxy&apos;);
+
+//
+// Create a proxy server with custom application logic
+//
+var proxy = httpProxy.createProxyServer({});
+
+//
+// Create your custom server and just call `proxy.web()` to proxy
+// a web request to the target passed in the options
+// also you can use `proxy.ws()` to proxy a websockets request
+//
+var server = http.createServer(function(req, res) {
+  // You can define here your custom logic to handle the request
+  // and then proxy the request.
+  proxy.web(req, res, { target: &apos;http://127.0.0.1:5060&apos; });
+});
+
+console.log(&quot;listening on port 5050&quot;)
+server.listen(5050);</code>
+</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h4 id="setup-a-stand-alone-proxy-server-with-proxy-request-header-re-writing">Setup a stand-alone proxy server with proxy request header re-writing</h4>
+<p>This example shows how you can proxy a request using your own HTTP server that
+modifies the outgoing proxy request by adding a special header.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">var http = require(&apos;http&apos;),
+    httpProxy = require(&apos;reverse-proxy&apos;);
+
+//
+// Create a proxy server with custom application logic
+//
+var proxy = httpProxy.createProxyServer({});
+
+// To modify the proxy connection before data is sent, you can listen
+// for the &apos;proxyReq&apos; event. When the event is fired, you will receive
+// the following arguments:
+// (http.ClientRequest proxyReq, http.IncomingMessage req,
+//  http.ServerResponse res, Object options). This mechanism is useful when
+// you need to modify the proxy request before the proxy connection
+// is made to the target.
+//
+proxy.on(&apos;proxyReq&apos;, function(proxyReq, req, res, options) {
+  proxyReq.setHeader(&apos;X-Special-Proxy-Header&apos;, &apos;foobar&apos;);
+});
+
+var server = http.createServer(function(req, res) {
+  // You can define here your custom logic to handle the request
+  // and then proxy the request.
+  proxy.web(req, res, {
+    target: &apos;http://127.0.0.1:5060&apos;
+  });
+});
+
+console.log(&quot;listening on port 5050&quot;)
+server.listen(5050);</code>
+</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h4 id="modify-a-response-from-a-proxied-server">Modify a response from a proxied server</h4>
+<p>Sometimes when you have received a HTML/XML document from the server of origin you would like to modify it before forwarding it on.</p>
+<p><a href="https://github.com/No9/harmon">Harmon</a> allows you to do this in a streaming style so as to keep the pressure on the proxy to a minimum.</p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h4 id="setup-a-stand-alone-proxy-server-with-latency">Setup a stand-alone proxy server with latency</h4>
+<pre><code class="lang-js"><code class="source-code prettyprint">var http = require(&apos;http&apos;),
+    httpProxy = require(&apos;reverse-proxy&apos;);
+
+//
+// Create a proxy server with latency
+//
+var proxy = httpProxy.createProxyServer();
+
+//
+// Create your server that makes an operation that waits a while
+// and then proxies the request
+//
+http.createServer(function (req, res) {
+  // This simulates an operation that takes 500ms to execute
+  setTimeout(function () {
+    proxy.web(req, res, {
+      target: &apos;http://localhost:9008&apos;
+    });
+  }, 500);
+}).listen(8008);
+
+//
+// Create your target server
+//
+http.createServer(function (req, res) {
+  res.writeHead(200, { &apos;Content-Type&apos;: &apos;text/plain&apos; });
+  res.write(&apos;request successfully proxied to: &apos; + req.url + &apos;\n&apos; + JSON.stringify(req.headers, true, 2));
+  res.end();
+}).listen(9008);</code>
+</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h4 id="using-https">Using HTTPS</h4>
+<p>You can activate the validation of a secure SSL certificate to the target connection (avoid self signed certs), just set <code>secure: true</code> in the options.</p>
+<h5 id="https-http">HTTPS -&gt; HTTP</h5>
+<pre><code class="lang-js"><code class="source-code prettyprint">//
+// Create the HTTPS proxy server in front of a HTTP server
+//
+httpProxy.createServer({
+  target: {
+    host: &apos;localhost&apos;,
+    port: 9009
+  },
+  ssl: {
+    key: fs.readFileSync(&apos;valid-ssl-key.pem&apos;, &apos;utf8&apos;),
+    cert: fs.readFileSync(&apos;valid-ssl-cert.pem&apos;, &apos;utf8&apos;)
+  }
+}).listen(8009);</code>
+</code></pre>
+<h5 id="https-https">HTTPS -&gt; HTTPS</h5>
+<pre><code class="lang-js"><code class="source-code prettyprint">//
+// Create the proxy server listening on port 443
+//
+httpProxy.createServer({
+  ssl: {
+    key: fs.readFileSync(&apos;valid-ssl-key.pem&apos;, &apos;utf8&apos;),
+    cert: fs.readFileSync(&apos;valid-ssl-cert.pem&apos;, &apos;utf8&apos;)
+  },
+  target: &apos;https://localhost:9010&apos;,
+  secure: true // Depends on your needs, could be false.
+}).listen(443);</code>
+</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h4 id="proxying-websockets">Proxying WebSockets</h4>
+<p>You can activate the websocket support for the proxy using <code>ws:true</code> in the options.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">//
+// Create a proxy server for websockets
+//
+httpProxy.createServer({
+  target: &apos;ws://localhost:9014&apos;,
+  ws: true
+}).listen(8014);</code>
+</code></pre>
+<p>Also you can proxy the websocket requests just calling the <code>ws(req, socket, head)</code> method.</p>
+<pre><code class="lang-js"><code class="source-code prettyprint">//
+// Setup our server to proxy standard HTTP requests
+//
+var proxy = new httpProxy.createProxyServer({
+  target: {
+    host: &apos;localhost&apos;,
+    port: 9015
+  }
+});
+var proxyServer = http.createServer(function (req, res) {
+  proxy.web(req, res);
+});
+
+//
+// Listen to the `upgrade` event and proxy the
+// WebSocket requests as well.
+//
+proxyServer.on(&apos;upgrade&apos;, function (req, socket, head) {
+  proxy.ws(req, socket, head);
+});
+
+proxyServer.listen(8015);</code>
+</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="options">Options</h3>
+<p><code>httpProxy.createProxyServer</code> supports the following options:</p>
+<ul>
+<li><strong>target</strong>: url string to be parsed with the url module</li>
+<li><strong>forward</strong>: url string to be parsed with the url module</li>
+<li><strong>agent</strong>: object to be passed to http(s).request (see Node&apos;s <a href="http://nodejs.org/api/https.html#https_class_https_agent">https agent</a> and <a href="http://nodejs.org/api/http.html#http_class_http_agent">http agent</a> objects)</li>
+<li><strong>ssl</strong>: object to be passed to https.createServer()</li>
+<li><strong>ws</strong>: true/false, if you want to proxy websockets</li>
+<li><strong>xfwd</strong>: true/false, adds x-forward headers</li>
+<li><strong>secure</strong>: true/false, if you want to verify the SSL Certs</li>
+<li><strong>toProxy</strong>: true/false, passes the absolute URL as the <code>path</code> (useful for proxying to proxies)</li>
+<li><strong>prependPath</strong>: true/false, Default: true - specify whether you want to prepend the target&apos;s path to the proxy path</li>
+<li><strong>ignorePath</strong>: true/false, Default: false - specify whether you want to ignore the proxy path of the incoming request (note: you will have to append / manually if required).</li>
+<li><strong>localAddress</strong>: Local interface string to bind for outgoing connections</li>
+<li><strong>changeOrigin</strong>: true/false, Default: false - changes the origin of the host header to the target URL</li>
+<li><strong>auth</strong>: Basic authentication i.e. &apos;user:password&apos; to compute an Authorization header.</li>
+<li><strong>hostRewrite</strong>: rewrites the location hostname on (301/302/307/308) redirects.</li>
+<li><strong>autoRewrite</strong>: rewrites the location host/port on (301/302/307/308) redirects based on requested host/port. Default: false.</li>
+<li><strong>protocolRewrite</strong>: rewrites the location protocol on (301/302/307/308) redirects to &apos;http&apos; or &apos;https&apos;. Default: null.</li>
+<li><strong>headers</strong>: object with extra headers to be added to target requests.</li>
+</ul>
+<p><strong>NOTE:</strong>
+<code>options.ws</code> and <code>options.ssl</code> are optional.
+<code>options.target</code> and <code>options.forward</code> cannot both be missing</p>
+<p>If you are using the <code>proxyServer.listen</code> method, the following options are also applicable:</p>
+<ul>
+<li><strong>ssl</strong>: object to be passed to https.createServer()</li>
+<li><strong>ws</strong>: true/false, if you want to proxy websockets</li>
+</ul>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="listening-for-proxy-events">Listening for proxy events</h3>
+<ul>
+<li><code>error</code>: The error event is emitted if the request to the target fail. <strong>We do not do any error handling of messages passed between client and proxy, and messages passed between proxy and target, so it is recommended that you listen on errors and handle them.</strong></li>
+<li><code>proxyReq</code>: This event is emitted before the data is sent. It gives you a chance to alter the proxyReq request object. Applies to &quot;web&quot; connections</li>
+<li><code>proxyReqWs</code>: This event is emitted before the data is sent. It gives you a chance to alter the proxyReq request object. Applies to &quot;websocket&quot; connections</li>
+<li><code>proxyRes</code>: This event is emitted if the request to the target got a response.</li>
+<li><code>open</code>: This event is emitted once the proxy websocket was created and piped into the target websocket.</li>
+<li><code>close</code>: This event is emitted once the proxy websocket was closed.</li>
+<li>(DEPRECATED) <code>proxySocket</code>: Deprecated in favor of <code>open</code>.</li>
+</ul>
+<pre><code class="lang-js"><code class="source-code prettyprint">var httpProxy = require(&apos;reverse-proxy&apos;);
+// Error example
+//
+// Http Proxy Server with bad target
+//
+var proxy = httpProxy.createServer({
+  target:&apos;http://localhost:9005&apos;
+});
+
+proxy.listen(8005);
+
+//
+// Listen for the `error` event on `proxy`.
+proxy.on(&apos;error&apos;, function (err, req, res) {
+  res.writeHead(500, {
+    &apos;Content-Type&apos;: &apos;text/plain&apos;
+  });
+
+  res.end(&apos;Something went wrong. And we are reporting a custom error message.&apos;);
+});
+
+//
+// Listen for the `proxyRes` event on `proxy`.
+//
+proxy.on(&apos;proxyRes&apos;, function (proxyRes, req, res) {
+  console.log(&apos;RAW Response from the target&apos;, JSON.stringify(proxyRes.headers, true, 2));
+});
+
+//
+// Listen for the `open` event on `proxy`.
+//
+proxy.on(&apos;open&apos;, function (proxySocket) {
+  // listen for messages coming FROM the target here
+  proxySocket.on(&apos;data&apos;, hybiParseAndLogMessage);
+});
+
+//
+// Listen for the `close` event on `proxy`.
+//
+proxy.on(&apos;close&apos;, function (res, socket, head) {
+  // view disconnected websocket connections
+  console.log(&apos;Client disconnected&apos;);
+});</code>
+</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="shutdown">Shutdown</h3>
+<ul>
+<li>When testing or running server within another program it may be necessary to close the proxy.</li>
+<li>This will stop the proxy from accepting new connections.</li>
+</ul>
+<pre><code class="lang-js"><code class="source-code prettyprint">var proxy = new httpProxy.createProxyServer({
+  target: {
+    host: &apos;localhost&apos;,
+    port: 1337
+  }
+});
+
+proxy.close();</code>
+</code></pre>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="miscellaneous">Miscellaneous</h3>
+<h4 id="proxytable-api">ProxyTable API</h4>
+<p>A proxy table API is available through this add-on <a href="https://github.com/donasaur/reverse-proxy-rules">module</a>, which lets you define a set of rules to translate matching routes to target routes that the reverse proxy will talk to.</p>
+<h4 id="test">Test</h4>
+<pre><code><code class="source-code prettyprint">$ npm test</code>
+</code></pre><h4 id="logo">Logo</h4>
+<p>Logo created by <a href="http://dribbble.com/diegopq">Diego Pasquali</a></p>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
+<h3 id="contributing-and-issues">Contributing and Issues</h3>
+<ul>
+<li>Search on Google/Github</li>
+<li>If you can&apos;t find anything, open an issue</li>
+<li>If you feel comfortable about fixing the issue, fork the repo</li>
+<li>Commit to your local branch (which must be different from <code>master</code>)</li>
+<li>Submit your Pull Request (be sure to include tests and update documentation)</li>
+</ul>
+<p><strong><a href="#table-of-contents">Back to top</a></strong></p>
 <hr>
 <h2 id="test">TEST</h2>
 <p><strong>Unit tests output for current release:</strong></p>
