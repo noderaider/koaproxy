@@ -54,7 +54,7 @@ export default ({}) => ({ 'start': 'run-p -lnc build-watch test-watch'
                           /** GH-PAGES RELEASE */
                         , 'prerelease-gh-pages': 'npm run doc'
                         , 'release-gh-pages': 'run-s gh-pages-subtree gh-pages-push gh-pages-delete'
-                        , 'postrelease-gh-pages': 'npm run clean-doc && npm run git-save -- clean && git push -u origin master --follow-tags'
+                        , 'postrelease-gh-pages': 'run-s -lnc clean-doc git-add git-commit:doc && git push -u origin master --follow-tags'
 
                           /** ESDOC */
                         , 'predoc': `rimraf ${GH_PAGES_ROOT}`
