@@ -1,22 +1,3 @@
-## [@tixinc/config](https://github.com/tixinc/config)
-
-**This module contains all dependencies to build client and server configuration files for all @tixinc modules.**
-
-
-### Install (from command line interface in an @tixinc module folder)
-
-`npm i -S @tixinc/config@latest`
-
-
-
-
----
-
-
-## TEST
-
-**Unit tests output for current release:**
-
 # TOC
    - [lib/es-http-proxy/common.js](#libes-http-proxycommonjs)
      - [#setupOutgoing](#libes-http-proxycommonjs-setupoutgoing)
@@ -1810,8 +1791,3 @@ _https2.default.request({
 ## Before testing examples
 <a name="es-http-proxy-examples-requiring-all-the-examples"></a>
 ## Requiring all the examples
-
-## COVERAGE
-
-**Code coverage output for current release:**
-```

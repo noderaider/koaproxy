@@ -40,7 +40,7 @@ export default ({}) => ({ 'start': 'run-p -lnc build-watch test-watch'
                         , 'md-insert-coverage-header': 'cat md/HEADER_COVERAGE.md >> README.md'
                         , 'md-insert-coverage-content': 'cat COVERAGE.md >> README.md'
                         , 'md-insert-coverage': 'run-s md-insert-coverage-header md-insert-code md-insert-coverage-content md-insert-code'
-                        , 'md-combine': 'run-s -ln test-mocha-md md-create-readme md-insert-rule md-insert-test md-insert-coverage'
+                        , 'md-combine': 'run-s -ln test-mocha-md md-create-readme md-insert-rule md-insert-test'
 
                           /** RELEASE */
                         , 'preversion': 'run-s -ln build test'
