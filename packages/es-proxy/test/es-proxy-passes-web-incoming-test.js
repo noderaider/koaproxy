@@ -1,5 +1,5 @@
-import * as webPasses from '../lib/es-http-proxy/passes/web-incoming'
-import httpProxy from '../lib/es-http-proxy'
+import * as webPasses from '../lib/es-proxy/passes/web-incoming'
+import httpProxy from '../lib/es-proxy'
 import { expect } from 'chai'
 import http from 'http'
 

@@ -1,1 +1,1 @@
-module.exports = require('./es-http-proxy')
+export default { name: 'koaproxy-ws' }

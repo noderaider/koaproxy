@@ -23,7 +23,7 @@ implementing components such as reverse proxies and load balancers.
 
 **This library is currently in a state of rewrite. Some of the documentation has not yet been rewritten. Stay tuned.**
 
-* Rewrite with ES modules as es-http-proxy - Done
+* Rewrite with ES modules as es-proxy - Done
 * Get all tests passing with ES6+ mocha - Done
 * Write koaproxy
   * async / await friendly promise based

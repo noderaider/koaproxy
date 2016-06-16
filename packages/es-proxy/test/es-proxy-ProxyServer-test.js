@@ -1,4 +1,4 @@
-import ProxyServer from '../lib/es-http-proxy/ProxyServer'
+import ProxyServer from '../lib/es-proxy/ProxyServer'
 import EE3 from 'eventemitter3'
 const should = require('chai').should()
 

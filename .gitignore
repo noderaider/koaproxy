@@ -5,7 +5,6 @@ atest.js
 notes
 primus-proxy.js
 tes.js
-npm-debug.log
-lerna-debug.log
-
-
+npm-debug.log*
+lerna-debug.log*
+.nyc_output/

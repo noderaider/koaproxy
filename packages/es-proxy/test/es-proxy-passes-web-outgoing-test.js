@@ -1,4 +1,4 @@
-import * as httpProxy from '../lib/es-http-proxy/passes/web-outgoing'
+import * as httpProxy from '../lib/es-proxy/passes/web-outgoing'
 import { expect } from 'chai'
 
 describe('lib/es-http-proxy/passes/web-outgoing.js', function () {

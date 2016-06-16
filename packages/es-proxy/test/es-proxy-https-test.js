@@ -1,4 +1,4 @@
-import ProxyServer, { createProxyServer } from '../lib/es-http-proxy'
+import ProxyServer, { createProxyServer } from '../lib/es-proxy'
 import semver from 'semver'
 import { expect } from 'chai'
 import http from 'http'

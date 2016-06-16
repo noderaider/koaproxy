@@ -1,4 +1,4 @@
-import ProxyServer, { createProxyServer } from '../lib/es-http-proxy'
+import ProxyServer, { createProxyServer } from '../lib/es-proxy'
 import http from 'http'
 import ws from 'ws'
 import io from 'socket.io'

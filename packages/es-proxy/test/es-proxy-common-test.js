@@ -1,4 +1,4 @@
-import * as common from '../lib/es-http-proxy/common'
+import * as common from '../lib/es-proxy/common'
 import url from 'url'
 import { expect, should as importShould } from 'chai'
 const should = importShould()

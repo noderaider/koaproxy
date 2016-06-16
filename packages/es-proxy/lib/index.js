@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./es-http-proxy');
+module.exports = require('./es-proxy');
